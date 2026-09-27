@@ -1,0 +1,2609 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AWS SAA-C03 Pro Max (2026) - Giáo Trình & Tra Cứu Tùy Chọn</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* =========================================================
+       NEO-BRUTALISM DESIGN SYSTEM - AWS SAA-C03 PRO MAX (2026)
+       ========================================================= */
+
+    :root, [data-theme="dark"] {
+      --bg: #0c0e15;
+      --sidebar-bg: #141724;
+      --sidebar-border: #f8fafc;
+      --card-bg: #191c2b;
+      --card-border: #f8fafc;
+      --border-color: #f8fafc;
+      --border-subtle: #334155;
+      --shadow-color: #000000;
+      --shadow: 4px 4px 0px #000000;
+      --shadow-sm: 2px 2px 0px #000000;
+      --shadow-lg: 6px 6px 0px #000000;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #ffe600;
+      --accent-hover: #ffd000;
+      --accent-text: #000000;
+      --primary: #38bdf8;
+      --primary-text: #000000;
+      --primary-bg: #0c283d;
+      --success: #34d399;
+      --success-bg: #064e3b;
+      --danger: #ff5252;
+      --danger-bg: #4c0519;
+      --warning: #fbbf24;
+      --warning-bg: #78350f;
+      --purple: #c084fc;
+      --purple-bg: #3b0764;
+      --table-header: #ffe600;
+      --table-header-text: #000000;
+      --table-hover: #22273b;
+      --code-bg: #080a10;
+      --code-color: #38bdf8;
+      --code-border: #38bdf8;
+      --progress-bg: #090c14;
+      --progress-fill: #ffe600;
+      --ctrl-bg: #141724;
+      --callout-bg: #2d1419;
+      --rule-bg: #12141f;
+      --badge-req-color: #38bdf8;
+      --badge-opt-color: #34d399;
+      --badge-trap-color: #ff5252;
+      --opt-color: #fbbf24;
+      --opt-badge-color: #34d399;
+      --flashcard-stripe-1: #1a1e30;
+      --flashcard-stripe-2: #121522;
+      --revealed-bg: #064e3b;
+    }
+
+    [data-theme="light"] {
+      --bg: #fdfbf7;
+      --sidebar-bg: #fffdf5;
+      --sidebar-border: #000000;
+      --card-bg: #ffffff;
+      --card-border: #000000;
+      --border-color: #000000;
+      --border-subtle: #cbd5e1;
+      --shadow-color: #000000;
+      --shadow: 4px 4px 0px #000000;
+      --shadow-sm: 2px 2px 0px #000000;
+      --shadow-lg: 6px 6px 0px #000000;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --accent: #ffe600;
+      --accent-hover: #ffd000;
+      --accent-text: #000000;
+      --primary: #2563eb;
+      --primary-text: #ffffff;
+      --primary-bg: #dbeafe;
+      --success: #16a34a;
+      --success-bg: #dcfce7;
+      --danger: #dc2626;
+      --danger-bg: #fee2e2;
+      --warning: #f59e0b;
+      --warning-bg: #fef3c7;
+      --purple: #7c3aed;
+      --purple-bg: #ede9fe;
+      --table-header: #ffe600;
+      --table-header-text: #000000;
+      --table-hover: #fffbeb;
+      --code-bg: #f1f5f9;
+      --code-color: #0f172a;
+      --code-border: #000000;
+      --progress-bg: #e2e8f0;
+      --progress-fill: #ffe600;
+      --ctrl-bg: #ffffff;
+      --callout-bg: #fef2f2;
+      --rule-bg: #f8fafc;
+      --badge-req-color: #2563eb;
+      --badge-opt-color: #16a34a;
+      --badge-trap-color: #dc2626;
+      --opt-color: #047857;
+      --opt-badge-color: #16a34a;
+      --flashcard-stripe-1: #e2e8f0;
+      --flashcard-stripe-2: #f8fafc;
+      --revealed-bg: #dcfce7;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; max-width: 100vw; }
+    body {
+      font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      display: flex;
+      min-height: 100vh;
+      overflow-x: hidden;
+      max-width: 100vw;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    /* Global Scrollbar */
+    ::-webkit-scrollbar { width: 9px; height: 9px; }
+    ::-webkit-scrollbar-track { background: var(--bg); border-left: 2px solid var(--border-color); }
+    ::-webkit-scrollbar-thumb { background: var(--accent); border: 2px solid #000; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--accent-hover); }
+
+    /* Neo-Brutalism Global Utilities */
+    .neo-box {
+      border: 2.5px solid var(--border-color);
+      box-shadow: var(--shadow);
+      border-radius: 8px;
+    }
+    .neo-btn {
+      border: 2.5px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.12s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .neo-btn:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: var(--shadow);
+    }
+    .neo-btn:active {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0 var(--shadow-color);
+    }
+
+    /* Sidebar Navigation */
+    #sidebar {
+      width: 320px;
+      height: 100vh;
+      position: sticky;
+      top: 0;
+      background-color: var(--sidebar-bg);
+      border-right: 3px solid var(--border-color);
+      padding: 24px 16px;
+      overflow-y: auto;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      z-index: 50;
+      transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    .brand-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--accent);
+      border: 2.5px solid #000;
+      box-shadow: 3px 3px 0 #000;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      color: #000;
+      font-size: 1.15rem;
+      letter-spacing: -0.04em;
+    }
+    .brand-title {
+      font-size: 1.12rem;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+    .brand-subtitle {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      line-height: 1.4;
+      font-weight: 500;
+    }
+
+    /* Progress Widget */
+    .progress-box {
+      background: var(--card-bg);
+      border: 2.5px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-bottom: 20px;
+    }
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .progress-bar-bg {
+      width: 100%;
+      height: 12px;
+      background: var(--progress-bg);
+      border: 2px solid var(--border-color);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: var(--accent);
+      border-right: 2px solid #000;
+      width: 0%;
+      transition: width 0.3s ease;
+      background-image: repeating-linear-gradient(
+        -45deg,
+        rgba(0,0,0,0.15),
+        rgba(0,0,0,0.15) 6px,
+        transparent 6px,
+        transparent 12px
+      );
+    }
+
+    /* Sidebar Links */
+    #sidebar ul { list-style: none; flex: 1; }
+    #sidebar li { margin-bottom: 4px; }
+    #sidebar a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.86rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 12px;
+      border-radius: 6px;
+      border: 1.5px solid transparent;
+      transition: all 0.12s ease;
+      cursor: pointer;
+    }
+    #sidebar a:hover {
+      color: var(--text);
+      background-color: var(--table-hover);
+      border-color: var(--border-color);
+      transform: translate(-1.5px, -1.5px);
+      box-shadow: 2px 2px 0 var(--shadow-color);
+    }
+    #sidebar a.active {
+      color: #000;
+      background-color: var(--accent);
+      border: 2px solid #000;
+      box-shadow: 2.5px 2.5px 0 #000;
+      font-weight: 800;
+    }
+
+    /* Main Container */
+    #main {
+      flex: 1;
+      padding: 36px 48px 80px;
+      max-width: 1280px;
+      margin: 0 auto;
+      min-width: 0;
+      width: 100%;
+      box-sizing: border-box;
+      overflow-x: hidden;
+    }
+
+    /* Top Sticky Control Center */
+    .control-center {
+      position: sticky;
+      top: 16px;
+      z-index: 40;
+      margin-bottom: 32px;
+      background: var(--ctrl-bg);
+      border: 3px solid var(--border-color);
+      box-shadow: var(--shadow-lg);
+      border-radius: 10px;
+      padding: 16px 20px;
+      transition: all 0.2s ease;
+    }
+    .search-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+    .search-wrapper {
+      position: relative;
+      flex: 1;
+      min-width: 260px;
+    }
+    .search-icon-pos {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      display: flex;
+    }
+    .search-input {
+      width: 100%;
+      padding: 12px 16px 12px 42px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 8px;
+      border: 2.5px solid var(--border-color);
+      background-color: var(--bg);
+      color: var(--text);
+      outline: none;
+      transition: all 0.15s ease;
+      font-family: inherit;
+      box-shadow: var(--shadow-sm);
+    }
+    .search-input:focus {
+      border-color: var(--primary);
+      box-shadow: 4px 4px 0 var(--shadow-color);
+      transform: translate(-1px, -1px);
+    }
+    .kbd-shortcut {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 800;
+      background: var(--accent);
+      border: 1.5px solid #000;
+      color: #000;
+      padding: 2px 7px;
+      border-radius: 4px;
+      box-shadow: 1.5px 1.5px 0 #000;
+      pointer-events: none;
+    }
+
+    /* Action Buttons in Control Center */
+    .btn-action {
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      border: 2.5px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      background: var(--card-bg);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.12s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .btn-action:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: var(--shadow);
+    }
+    .btn-action:active {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0 var(--shadow-color);
+    }
+    .btn-action.active {
+      background: var(--accent);
+      color: #000;
+      border-color: #000;
+      box-shadow: 3px 3px 0 #000;
+    }
+    .btn-theme {
+      background: var(--card-bg);
+    }
+
+    /* Filter Pills (Sticker Style) */
+    .filter-pills {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      scrollbar-width: none;
+    }
+    .filter-pills::-webkit-scrollbar { display: none; }
+    .pill {
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      background: var(--card-bg);
+      color: var(--text);
+      border: 2px solid var(--border-color);
+      box-shadow: 2px 2px 0 var(--shadow-color);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.12s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .pill:hover {
+      transform: translate(-1.5px, -1.5px);
+      box-shadow: 3.5px 3.5px 0 var(--shadow-color);
+    }
+    .pill:active {
+      transform: translate(1.5px, 1.5px);
+      box-shadow: 1px 1px 0 var(--shadow-color);
+    }
+    .pill.active {
+      background: var(--accent);
+      color: #000;
+      border-color: #000;
+      box-shadow: 3px 3px 0 #000;
+    }
+    .pill-trap {
+      background: #ff5252;
+      color: #fff !important;
+      border-color: #000;
+    }
+    .pill-trap.active {
+      background: #dc2626 !important;
+      color: #fff !important;
+      box-shadow: 3px 3px 0 #000;
+      animation: pulseTrap 1s infinite alternate;
+    }
+    @keyframes pulseTrap {
+      from { transform: scale(1); }
+      to { transform: scale(1.04); }
+    }
+
+    /* Results Counter Badge */
+    .results-count {
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-top: 10px;
+      padding: 6px 12px;
+      background: var(--table-hover);
+      border: 2px dashed var(--border-color);
+      border-radius: 6px;
+      display: none;
+    }
+    .results-count.show { display: inline-block; }
+
+    /* Section Styles */
+    section { margin-bottom: 64px; scroll-margin-top: 140px; }
+    .section-title {
+      font-size: 1.55rem;
+      font-weight: 900;
+      color: var(--text);
+      margin-bottom: 22px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .service-card {
+      background-color: var(--card-bg);
+      border: 3px solid var(--border-color);
+      border-radius: 10px;
+      padding: 26px 28px;
+      margin-bottom: 30px;
+      box-shadow: var(--shadow);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .service-card:hover {
+      transform: translate(-1.5px, -1.5px);
+      box-shadow: var(--shadow-lg);
+    }
+    .service-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+      gap: 10px;
+      border-bottom: 2px solid var(--border-subtle);
+      padding-bottom: 12px;
+    }
+    .service-name {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .service-tag {
+      font-size: 0.74rem;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border: 2px solid #000;
+      box-shadow: 2px 2px 0 #000;
+    }
+    .tag-core { background: #93c5fd; color: #000; }
+    .tag-2026 { background: #fda4af; color: #000; }
+
+    /* Theory Block */
+    .theory-block {
+      background-color: var(--rule-bg);
+      border: 2.5px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      border-radius: 8px;
+      padding: 18px 22px;
+      margin-bottom: 20px;
+      font-size: 0.94rem;
+    }
+    .theory-block h4 {
+      color: var(--text);
+      font-size: 0.92rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .theory-block ul { margin-left: 20px; }
+    .theory-block li { margin-bottom: 8px; color: var(--text); }
+
+    /* Comparison Box */
+    .comparison-box {
+      background: var(--card-bg);
+      border: 2.5px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      border-radius: 8px;
+      padding: 18px 22px;
+      margin: 20px 0;
+      font-size: 0.92rem;
+    }
+    .comparison-title {
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      display: inline-block;
+      background: var(--accent);
+      color: #000;
+      padding: 3px 8px;
+      border: 1.5px solid #000;
+      box-shadow: 2px 2px 0 #000;
+      border-radius: 4px;
+    }
+    .comparison-box ul { margin-left: 20px; margin-top: 8px; }
+    .comparison-box li { margin-bottom: 8px; }
+
+    /* Options Table */
+    .options-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+      font-size: 0.92rem;
+      border: 2.5px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .options-table th {
+      background-color: var(--table-header);
+      color: var(--table-header-text);
+      padding: 12px 14px;
+      text-align: left;
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      border-bottom: 2.5px solid var(--border-color);
+      border-right: 1.5px solid var(--border-color);
+      letter-spacing: 0.05em;
+    }
+    .options-table th:last-child { border-right: none; }
+    .options-table td {
+      padding: 14px 14px;
+      border-bottom: 1.5px solid var(--border-subtle);
+      border-right: 1.5px solid var(--border-subtle);
+      vertical-align: top;
+      background-color: var(--card-bg);
+      transition: background-color 0.1s ease;
+    }
+    .options-table td:last-child { border-right: none; }
+    .options-table tr:hover td { background-color: var(--table-hover); }
+    .options-table tr.mastered {
+      opacity: 0.55;
+      background: rgba(16, 185, 129, 0.06);
+    }
+    .options-table tr.mastered td.col-req {
+      text-decoration: line-through;
+      color: var(--text-muted);
+    }
+    .options-table tr.trap-highlight {
+      border: 3px solid #ff5252 !important;
+      background-color: var(--callout-bg) !important;
+    }
+
+    /* Checkbox & Interactive Mastery */
+    .mastery-chk {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      accent-color: var(--success);
+      margin-top: 3px;
+      border: 2px solid #000;
+    }
+
+    .col-req { width: 33%; font-weight: 600; color: var(--text); }
+    .col-opt { width: 28%; font-weight: 700; color: var(--opt-color); }
+    .col-note { width: 35%; color: var(--text-muted); font-size: 0.88rem; }
+
+    /* Flashcard Hide Mode */
+    body.flashcard-mode .col-opt {
+      position: relative;
+      background: repeating-linear-gradient(
+        -45deg,
+        var(--flashcard-stripe-1),
+        var(--flashcard-stripe-1) 8px,
+        var(--flashcard-stripe-2) 8px,
+        var(--flashcard-stripe-2) 16px
+      ) !important;
+      color: transparent !important;
+      border-radius: 6px;
+      cursor: pointer;
+      user-select: none;
+      min-height: 48px;
+      border: 2px dashed var(--border-color);
+      transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    body.flashcard-mode .col-opt * {
+      visibility: hidden;
+    }
+    body.flashcard-mode .col-opt::after {
+      content: "👀 BẤM ĐỂ LẬT";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--accent);
+      color: #000;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 4px 8px;
+      border: 1.5px solid #000;
+      box-shadow: 2px 2px 0 #000;
+      border-radius: 4px;
+      white-space: nowrap;
+      pointer-events: none;
+      visibility: visible;
+    }
+    body.flashcard-mode .col-opt.revealed {
+      background: var(--revealed-bg) !important;
+      color: var(--text) !important;
+      border: 2px solid var(--border-color);
+      animation: popIn 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    body.flashcard-mode .col-opt.revealed * {
+      visibility: visible;
+    }
+    body.flashcard-mode .col-opt.revealed::after {
+      display: none;
+    }
+    @keyframes popIn {
+      0% { transform: scale(0.96); opacity: 0.7; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    /* Code Tags & Copyable (Neo-Brutalist Sticker Style) */
+    strong { color: var(--text); }
+    code {
+      font-family: 'JetBrains Mono', monospace;
+      background: var(--code-bg);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.83rem;
+      font-weight: 700;
+      color: var(--code-color);
+      border: 1.5px solid var(--border-color);
+      box-shadow: 1.5px 1.5px 0 var(--shadow-color);
+      display: inline-block;
+      margin: 2px 0;
+      cursor: pointer;
+      transition: all 0.12s ease;
+      position: relative;
+    }
+    code:hover {
+      background: var(--accent);
+      color: #000;
+      border-color: #000;
+      transform: translateY(-1.5px);
+      box-shadow: 2.5px 2.5px 0 #000;
+    }
+    code:active {
+      transform: translateY(1px);
+      box-shadow: 1px 1px 0 #000;
+    }
+
+    /* Callouts */
+    .callout-trap {
+      background: var(--callout-bg);
+      border: 2.5px solid #ff5252;
+      box-shadow: var(--shadow-sm);
+      padding: 14px 18px;
+      border-radius: 8px;
+      margin-top: 14px;
+      font-size: 0.88rem;
+      color: var(--text);
+    }
+
+    /* Toast Notification (Sticker Pop) */
+    #toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--accent);
+      color: #000;
+      border: 2.5px solid #000;
+      padding: 12px 20px;
+      border-radius: 8px;
+      box-shadow: 4px 4px 0 #000;
+      font-size: 0.9rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 1000;
+      opacity: 0;
+      transform: translateY(20px);
+      pointer-events: none;
+      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    #toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Floating Back to Top Button */
+    #backToTop {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #000;
+      border: 2.5px solid #000;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 4px 4px 0 #000;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+      z-index: 90;
+    }
+    #backToTop.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    #backToTop:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0 #000;
+    }
+    #backToTop:active {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0 #000;
+    }
+
+    /* Mobile Header & Drawer */
+    .mobile-header {
+      display: none;
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      background: var(--sidebar-bg);
+      border-bottom: 3px solid var(--border-color);
+      padding: 12px 18px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .mobile-menu-btn {
+      background: var(--card-bg);
+      border: 2px solid var(--border-color);
+      box-shadow: 2px 2px 0 var(--shadow-color);
+      border-radius: 6px;
+      color: var(--text);
+      cursor: pointer;
+      padding: 6px 10px;
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      transition: all 0.12s ease;
+    }
+    .mobile-menu-btn:active {
+      transform: translate(1px, 1px);
+      box-shadow: 1px 1px 0 var(--shadow-color);
+    }
+    .sidebar-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(4px);
+      z-index: 45;
+    }
+
+    /* Section 16: Interactive Decision Grid */
+    .decision-lead {
+      background: var(--card-bg);
+      border: 2.5px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-bottom: 22px;
+      font-size: 0.94rem;
+    }
+    .decision-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+    .decision-card {
+      background: var(--card-bg);
+      border: 2.5px solid var(--border-color);
+      box-shadow: var(--shadow);
+      border-radius: 10px;
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.15s ease;
+    }
+    .decision-card:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: var(--shadow-lg);
+    }
+    .decision-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--border-color);
+    }
+    .decision-icon {
+      font-size: 1.6rem;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #000;
+      box-shadow: 2px 2px 0 #000;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+    .decision-card-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.3;
+    }
+    .decision-card-sub {
+      font-size: 0.74rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .decision-card-body {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+    }
+    .decision-rule {
+      background: var(--rule-bg);
+      border: 1.5px solid var(--border-color);
+      border-radius: 6px;
+      padding: 10px 12px;
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+    .decision-badge {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: var(--accent);
+      color: #000;
+      border: 1.5px solid #000;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+    .decision-cost .decision-icon { background: #fef08a; }
+    .decision-ops .decision-icon { background: #bae6fd; }
+    .decision-ha .decision-icon { background: #bbf7d0; }
+    .decision-speed .decision-icon { background: #fbcfe8; }
+
+    /* Responsive Mobile Cards for Tables (Screen <= 768px) */
+    @media (max-width: 768px) {
+      .options-table,
+      .options-table tbody,
+      .options-table tr,
+      .options-table td {
+        display: block;
+        width: 100% !important;
+        box-sizing: border-box;
+      }
+      .options-table thead,
+      .options-table tr:first-child:not(:has(td)) {
+        display: none !important;
+      }
+      .options-table tr {
+        margin-bottom: 18px;
+        background: var(--card-bg);
+        border: 2.5px solid var(--border-color);
+        box-shadow: 4px 4px 0 var(--shadow-color);
+        border-radius: 10px;
+        padding: 16px;
+        position: relative;
+        transition: transform 0.12s ease;
+      }
+      .options-table tr:hover {
+        transform: translate(-1px, -1px);
+        box-shadow: 5px 5px 0 var(--shadow-color);
+      }
+      .options-table td {
+        padding: 8px 0;
+        border: none;
+        border-bottom: 1.5px dashed var(--border-subtle);
+        font-size: 0.92rem;
+      }
+      .options-table td:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+      .options-table td.col-mastery {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        border-bottom: 2px solid var(--border-color);
+      }
+      .options-table td.col-mastery::after {
+        content: "ĐÃ THUỘC BÀI";
+        font-size: 0.72rem;
+        font-weight: 800;
+        font-family: 'JetBrains Mono', monospace;
+        letter-spacing: 0.05em;
+        padding: 2px 8px;
+        border-radius: 4px;
+        background: var(--success-bg);
+        color: var(--success);
+        border: 1px solid var(--success);
+      }
+      .options-table td.col-req::before {
+        content: "📌 YÊU CẦU / ĐỀ BÀI:";
+        display: block;
+        font-size: 0.72rem;
+        font-weight: 800;
+        font-family: 'JetBrains Mono', monospace;
+        color: var(--primary);
+        margin-bottom: 4px;
+        letter-spacing: 0.05em;
+      }
+      .options-table td.col-opt::before {
+        content: "✅ GIẢI PHÁP CHÍNH XÁC:";
+        display: block;
+        font-size: 0.72rem;
+        font-weight: 800;
+        font-family: 'JetBrains Mono', monospace;
+        color: var(--opt-badge-color);
+        margin-bottom: 4px;
+        letter-spacing: 0.05em;
+      }
+      .options-table td.col-note::before {
+        content: "⚠️ BẪY & LƯU Ý MẤU CHỐT:";
+        display: block;
+        font-size: 0.72rem;
+        font-weight: 800;
+        font-family: 'JetBrains Mono', monospace;
+        color: var(--danger);
+        margin-bottom: 4px;
+        letter-spacing: 0.05em;
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      body { flex-direction: column; overflow-x: hidden; width: 100%; max-width: 100vw; }
+      .mobile-header { display: flex; }
+      #sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        transform: translateX(-100%);
+      }
+      #sidebar.open { transform: translateX(0); }
+      .sidebar-backdrop.open { display: block; }
+      #main { padding: 20px 16px 60px; max-width: 100%; width: 100%; }
+      .control-center { top: 68px; }
+      .service-card, .comparison-box, .theory-block, .options-table, .control-center, details, details > div {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      code {
+        word-break: break-word;
+        overflow-wrap: anywhere;
+      }
+    }
+
+    /* Print Styles for Study Cheat Sheet */
+    @media print {
+      #sidebar, .control-center, .mobile-header, #backToTop, #toast { display: none !important; }
+      #main { padding: 0 !important; max-width: 100% !important; }
+      body { background: #fff !important; color: #000 !important; }
+      .service-card, .options-table, .comparison-box, .theory-block {
+        box-shadow: none !important;
+        border: 1px solid #000 !important;
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Mobile Top Bar -->
+  <div class="mobile-header">
+    <div class="brand">
+      <div class="brand-icon">AWS</div>
+      <div class="brand-title">SAA-C03 Hub</div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <button id="mobileThemeBtn" class="mobile-menu-btn" aria-label="Đổi giao diện Sáng / Tối">
+        <span id="mobileThemeIcon">☀️</span>
+      </button>
+      <button id="menuBtn" class="mobile-menu-btn" aria-label="Mở danh mục">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="backdrop" class="sidebar-backdrop"></div>
+
+  <!-- Sidebar Navigation -->
+  <nav id="sidebar">
+    <div class="brand">
+      <div class="brand-icon">AWS</div>
+      <div>
+        <div class="brand-title">SAA-C03 Pro Max</div>
+        <div style="font-size: 0.75rem; color: var(--accent); font-weight: 800; font-family: 'JetBrains Mono', monospace;">Edition 2026</div>
+      </div>
+    </div>
+    <div class="brand-subtitle">Giáo trình lý thuyết chuyên sâu & bảng tra cứu tùy chọn chính xác</div>
+
+    <!-- Progress Tracker -->
+    <div class="progress-box">
+      <div class="progress-header">
+        <span>Tiến độ thuộc bài</span>
+        <span id="progressText" style="color: var(--primary); font-family: 'JetBrains Mono', monospace;">0%</span>
+      </div>
+      <div class="progress-bar-bg">
+        <div id="progressBar" class="progress-bar-fill"></div>
+      </div>
+    </div>
+
+    <ul>
+      <li><a href="#vpc-network" class="nav-link">1. VPC & Networking</a></li>
+      <li><a href="#ec2-compute" class="nav-link">2. Compute & Scaling (EC2, ASG)</a></li>
+      <li><a href="#containers-serverless" class="nav-link">3. Containers & Serverless</a></li>
+      <li><a href="#s3-storage" class="nav-link">4. Amazon S3 & Object Storage</a></li>
+      <li><a href="#block-file-storage" class="nav-link">5. EBS, EFS & FSx Family</a></li>
+      <li><a href="#databases-sql" class="nav-link">6. RDS & Aurora</a></li>
+      <li><a href="#databases-nosql" class="nav-link">7. DynamoDB & ElastiCache</a></li>
+      <li><a href="#messaging-decoupling" class="nav-link">8. SQS, SNS & EventBridge</a></li>
+      <li><a href="#security-identity" class="nav-link">9. IAM, KMS & Secrets</a></li>
+      <li><a href="#network-security" class="nav-link">10. WAF, Shield, GuardDuty</a></li>
+      <li><a href="#analytics-bigdata" class="nav-link">11. Kinesis, Athena, Glue, Redshift</a></li>
+      <li><a href="#monitoring-management" class="nav-link">12. CloudWatch, CloudTrail, SSM</a></li>
+      <li><a href="#migration-hybrid" class="nav-link">13. DataSync, Snowball, DMS</a></li>
+      <li><a href="#focus-2026" class="nav-link">14. Trọng tâm mới 2026 (Bedrock)</a></li>
+      <li><a href="#mastery-900" class="nav-link">15. Bí quyết ngách điểm 900+</a></li>
+      <li><a href="#cheat-decisions" class="nav-link">16. Cây quyết định nhanh</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="main">
+    
+    <!-- Top Interactive Control Center -->
+    <div class="control-center">
+      <div class="search-row">
+        <div class="search-wrapper">
+          <span class="search-icon-pos"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></span>
+          <input type="text" id="searchInput" class="search-input" placeholder="Tìm kiếm nhanh lý thuyết, dịch vụ hoặc tình huống đề thi (Nhấn '/' để tìm)...">
+          <span class="kbd-shortcut">/</span>
+        </div>
+        <button id="toggleFlashcard" class="btn-action" title="Ẩn/hiện cột đáp án để tự kiểm tra kiến thức (Phím F)">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg> <span>Che Đáp Án</span>
+        </button>
+        <button id="themeToggle" class="btn-action btn-theme" title="Chuyển đổi giao diện Sáng / Tối (Phím T)">
+          <span id="themeIcon">☀️</span> <span id="themeLabel">Light Mode</span>
+        </button>
+      </div>
+
+      <!-- Quick Filter Pills -->
+      <div class="filter-pills">
+        <button class="pill active" data-filter="all">Tất Cả</button>
+        <button class="pill pill-trap" id="trapFilterBtn" data-filter="traps" title="Chỉ hiện các tình huống chứa bẫy đề thi hiểm hóc">⚡ Chỉ Xem Bẫy</button>
+        <button class="pill" data-filter="storage">Storage & S3</button>
+        <button class="pill" data-filter="compute">Compute & Lambda</button>
+        <button class="pill" data-filter="network">VPC & Network</button>
+        <button class="pill" data-filter="database">Databases</button>
+        <button class="pill" data-filter="security">Security & IAM</button>
+        <button class="pill" data-filter="analytics">Big Data</button>
+        <button class="pill" data-filter="2026">2026 Focus</button>
+        <button class="pill" data-filter="900">900+ Traps</button>
+      </div>
+
+      <div id="resultsCount" class="results-count"></div>
+    </div>
+
+    <!-- SECTIONS INJECTED HERE -->
+    <section id="vpc-network">
+      <h2 class="section-title">1. VPC & Mạng Cơ Bản (Networking Fundamentals)</h2>
+
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-name">Amazon Virtual Private Cloud (VPC)</div>
+          <span class="service-tag tag-core">Domain 1 & 2 (Core)</span>
+        </div>
+        
+        <div class="theory-block">
+          <h4>📖 Lý thuyết cốt lõi & Bản chất kiến trúc:</h4>
+          <ul>
+            <li><b>Bản chất:</b> Là một mạng riêng ảo biệt lập về mặt logic trên Cloud của AWS, tương tự trung tâm dữ liệu truyền thống nhưng hoàn toàn ảo hóa.</li>
+            <li><b>Phạm vi:</b> VPC thuộc cấp <b>Region</b>. Một VPC trải rộng trên tất cả các Availability Zones (AZs) trong Region đó.</li>
+            <li><b>CIDR Block:</b> Quy định dải IP riêng (RFC 1918), kích thước từ <code>/16</code> (65,536 IPs) đến <code>/28</code> (16 IPs). Không thể mở rộng hay thu hẹp dải CIDR chính sau khi tạo (nhưng có thể add thêm secondary CIDR).</li>
+            <li><b>Subnets:</b> Mỗi Subnet nằm trọn vẹn trong đúng <b>1 Availability Zone</b> duy nhất. AWS luôn dành riêng <b>5 địa chỉ IP đầu và cuối</b> trong mỗi Subnet (ví dụ subnet <code>/24</code> có 256 IP thì chỉ khả dụng 251 IP).</li>
+            <li><b>Public vs Private Subnet:</b> 
+              Subnet nào có Route Table trỏ <code>0.0.0.0/0</code> ra <b>Internet Gateway (IGW)</b> là Public Subnet. Subnet không trỏ ra IGW là Private Subnet.
+            </li>
+          </ul>
+        </div>
+
+        <div class="comparison-box">
+          <div class="comparison-title">⚖️ So sánh kinh điển: Security Group (SG) vs Network ACL (NACL)</div>
+          <table class="options-table">
+            <tr><th class="col-mastery" style="width: 48px; text-align: center;">Học</th>
+              <th>Đặc tính</th>
+              <th>Security Group (SG)</th>
+              <th>Network ACL (NACL)</th>
+            </tr>
+            <tr data-item-id="chk_item_2"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_2" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td><b>Cấp độ gắn</b></td>
+              <td>Cấp Instance / Card mạng ảo (ENI)</td>
+              <td>Cấp Subnet (bảo vệ toàn bộ máy trong subnet)</td>
+            </tr>
+            <tr data-item-id="chk_item_3"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_3" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td><b>Trạng thái (State)</b></td>
+              <td><b>Stateful</b> (Cho phép Inbound thì Outbound tự động mở)</td>
+              <td><b>Stateless</b> (Phải cấu hình tường minh cả Inbound & Outbound Ephemeral Ports 1024-65535)</td>
+            </tr>
+            <tr data-item-id="chk_item_4"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_4" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td><b>Loại Rule</b></td>
+              <td>Chỉ có rule <b>ALLOW</b> (mặc định deny hết)</td>
+              <td>Có cả rule <b>ALLOW</b> và <b>DENY</b> (chặn IP cụ thể được)</td>
+            </tr>
+            <tr data-item-id="chk_item_5"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_5" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td><b>Thứ tự đánh giá</b></td>
+              <td>Tất cả các rule được đánh giá đồng thời</td>
+              <td>Đánh giá tuần tự theo số thứ tự từ nhỏ đến lớn (Rule 100 Deny sẽ chặn trước Rule 200 Allow)</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="comparison-box">
+          <div class="comparison-title">⚖️ So sánh: VPC Gateway Endpoint vs Interface Endpoint (PrivateLink)</div>
+          <ul>
+            <li><b>Gateway Endpoint:</b> Cấu hình qua Route Table, <b>hoàn toàn miễn phí</b>, chỉ hỗ trợ đúng 2 dịch vụ: <b>Amazon S3</b> và <b>Amazon DynamoDB</b>.</li>
+            <li><b>Interface Endpoint (PrivateLink):</b> Tạo ra 1 card mạng ảo (ENI) với Private IP bên trong subnet, <b>tính phí theo giờ và dung lượng</b>, hỗ trợ hầu hết các dịch vụ AWS còn lại (SQS, SNS, KMS, CloudWatch, SSM...).</li>
+          </ul>
+        </div>
+
+        <table class="options-table">
+          <thead>
+            <tr><th class="col-mastery" style="width: 48px; text-align: center;">Học</th>
+              <th class="col-req">Yêu cầu / Tình huống trong đề thi</th>
+              <th class="col-opt">Tùy chọn / Giải pháp chính xác</th>
+              <th class="col-note">Bẫy & Lưu ý mấu chốt</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-item-id="chk_item_7"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_7" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>EC2 trong Private Subnet cần ra Internet tải update nhưng cấm chiều ngược lại</td>
+              <td>Đặt <b>NAT Gateway</b> ở <b>Public Subnet</b></td>
+              <td>NAT Gateway bắt buộc phải nằm ở Public Subnet và gắn Elastic IP. Để High Availability, phải tạo <b>1 NAT Gateway trên mỗi AZ</b>.</td>
+            </tr>
+            <tr data-item-id="chk_item_8"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_8" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Truy cập S3 / DynamoDB từ EC2 Private mà không tốn tiền NAT Gateway</td>
+              <td>Tạo <b>VPC Gateway Endpoint</b></td>
+              <td>Miễn phí 100%, không đi qua Internet hay NAT Gateway. Thêm prefix list vào Route Table.</td>
+            </tr>
+            <tr data-item-id="chk_item_9"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_9" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Ghi lại vết lưu lượng IP, cổng, gói tin ACCEPT/REJECT trong VPC để kiểm toán</td>
+              <td>Bật <b>VPC Flow Logs</b></td>
+              <td>Đẩy log về <b>CloudWatch Logs</b> hoặc lưu trữ lâu dài ở <b>Amazon S3</b>.</td>
+            </tr>
+            <tr data-item-id="chk_item_10"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_10" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Nối 2 VPC với nhau không cần đi qua Internet công cộng</td>
+              <td>Tạo <b>VPC Peering</b></td>
+              <td>Không hỗ trợ chuyển tiếp (No transitive routing): A nối B, B nối C thì A không tự thông C. Dải CIDR không được trùng nhau.</td>
+            </tr>
+            <tr data-item-id="chk_item_11"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_11" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Kết nối hình sao (Hub-and-Spoke) hàng chục VPC và mạng On-premise</td>
+              <td>Dùng <b>AWS Transit Gateway</b></td>
+              <td>Hỗ trợ Transitive routing, hỗ trợ Multicast, gom toàn bộ kết nối VPC, VPN và Direct Connect về một hub trung tâm.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="callout-trap">
+          ⚠️ <b>BẪY ĐỀ THI:</b> Khi đề bài hỏi <i>"EC2 in private subnet needs to access S3 with the lowest cost"</i>: Luôn chọn <b>Gateway Endpoint</b>, không chọn NAT Gateway vì NAT Gateway tốn phí hourly + data processing.
+        </div>
+      </div>
+    </section>
+
+<section id="ec2-compute">
+      <h2 class="section-title">2. Compute & Scaling (Amazon EC2 & Auto Scaling)</h2>
+
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-name">Amazon EC2 (Elastic Compute Cloud)</div>
+          <span class="service-tag tag-core">Domain 3 & 4 (Compute Core)</span>
+        </div>
+
+        <div class="theory-block">
+          <h4>📖 Lý thuyết cốt lõi & Các mô hình định giá (Purchasing Options):</h4>
+          <ul>
+            <li><b>On-Demand:</b> Trả theo giây/giờ. Phù hợp: Ứng dụng mới, tải ngắn hạn, không dự đoán trước được lưu lượng, môi trường dev/test.</li>
+            <li><b>Compute Savings Plans:</b> Cam kết chi tiêu ($/giờ) trong 1 hoặc 3 năm. Tiết kiệm tới 72%. Linh hoạt nhất: áp dụng cho mọi instance family, hệ điều hành, Region và cả Fargate / Lambda.</li>
+            <li><b>Spot Instances:</b> Rẻ nhất (giảm tới 90%), tận dụng tài nguyên dư thừa của AWS. <b>Có thể bị thu hồi bất cứ lúc nào với cảnh báo trước 2 phút</b>. Dùng cho: Batch processing, encode video, CI/CD runner, Big Data EMR task nodes. <i>Tuyệt đối không dùng cho Database hoặc Web app phục vụ khách hàng trực tiếp</i>.</li>
+            <li><b>Dedicated Hosts:</b> Thuê cả server vật lý chuyên dụng. Dùng khi: <b>Bring-Your-Own-License (BYOL)</b> (cần kiểm soát số socket/core theo bản quyền phần mềm) hoặc tuân thủ quy chuẩn pháp lý cách ly phần cứng.</li>
+          </ul>
+        </div>
+
+        <div class="comparison-box">
+          <div class="comparison-title">⚖️ So sánh: 3 loại Placement Groups (Nhóm vị trí máy chủ)</div>
+          <ul>
+            <li><b>Cluster:</b> Gom các EC2 nằm sát nhau trên cùng 1 rack vật lý trong 1 AZ $\rightarrow$ Đạt thông lượng mạng cao nhất, độ trễ cực thấp (dùng cho <b>HPC, Machine Learning, Deep Learning</b>).</li>
+            <li><b>Spread:</b> Rải mỗi EC2 sang 1 rack vật lý hoàn toàn riêng biệt (tối đa 7 máy/AZ) $\rightarrow$ Giảm rủi ro hỏng phần cứng, dùng cho số ít máy chủ tối quan trọng (Critical DB, Master nodes).</li>
+            <li><b>Partition:</b> Chia các EC2 vào các phân vùng độc lập (mỗi partition chứa nhiều máy nhưng không chung rack với partition khác) $\rightarrow$ Dùng cho hệ thống dữ liệu lớn: <b>Hadoop, Kafka, Cassandra</b>.</li>
+          </ul>
+        </div>
+
+        <table class="options-table">
+          <thead>
+            <tr><th class="col-mastery" style="width: 48px; text-align: center;">Học</th>
+              <th class="col-req">Yêu cầu / Tình huống trong đề thi</th>
+              <th class="col-opt">Tùy chọn / Giải pháp chính xác</th>
+              <th class="col-note">Bẫy & Lưu ý mấu chốt</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-item-id="chk_item_13"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_13" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Chống tấn công SSRF đánh cắp quyền IAM Role từ EC2 metadata</td>
+              <td>Bật <code>IMDSv2</code> (HttpTokens=required)</td>
+              <td>Bắt buộc client phải lấy Session Token trước bằng lệnh HTTP PUT trước khi đọc metadata <code>169.254.169.254</code>.</td>
+            </tr>
+            <tr data-item-id="chk_item_14"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_14" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Tạm dừng EC2 khi khởi tạo/terminate để chạy script sao lưu log</td>
+              <td>Auto Scaling <code>Lifecycle Hooks</code></td>
+              <td>Đưa instance vào trạng thái <code>Pending:Wait</code> hoặc <code>Terminating:Wait</code> trước khi hoàn tất vòng đời.</td>
+            </tr>
+            <tr data-item-id="chk_item_15"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_15" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Tự động duy trì mức CPU trung bình của cụm ở mức 50%</td>
+              <td>Auto Scaling <code>Target Tracking Policy</code></td>
+              <td>AWS tự tính toán số máy cần tăng/giảm dựa trên metric chỉ định (CPU, Request count).</td>
+            </tr>
+            <tr data-item-id="chk_item_16"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_16" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Tắt máy ảo và khởi động lại ngay tức thì mà không phải load lại OS</td>
+              <td>Bật <code>EC2 Hibernation</code></td>
+              <td>Lưu dữ liệu trong RAM vào ổ EBS root volume khi hibernate.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+<section id="containers-serverless">
+      <h2 class="section-title">3. Containers & Serverless (ECS, EKS, Fargate, Lambda)</h2>
+
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-name">AWS Fargate vs ECS / EKS & AWS Lambda</div>
+          <span class="service-tag tag-core">Domain 3 & 4 (Serverless)</span>
+        </div>
+
+        <div class="theory-block">
+          <h4>📖 Lý thuyết cốt lõi & So sánh kiến trúc:</h4>
+          <ul>
+            <li><b>AWS Fargate:</b> Serverless compute engine cho Docker Containers. Bạn chỉ định nghĩa dung lượng CPU/RAM cho Task, AWS tự động cấp phát và chạy. <b>Hoàn toàn không cần quản lý, vá lỗi hay bảo trì cụm máy chủ EC2 bên dưới</b> $\rightarrow$ Là đáp án vàng cho từ khóa <i>"Containers with least operational overhead"</i>.</li>
+            <li><b>EC2 Launch Type:</b> Bạn tự quản lý cụm EC2 chạy ECS Agent. Dùng khi cần kiểm soát loại máy chuyên biệt (GPU, ARM), gắn ổ đĩa EBS cố định, hoặc tối ưu chi phí với Spot.</li>
+            <li><b>AWS Lambda:</b> Serverless Event-driven compute. Chỉ chạy khi có event kích hoạt. Tối đa thời gian chạy là <b>15 phút (900 giây)</b>. Tự động scale từ 0 lên hàng chục nghìn lượt chạy song song.</li>
+          </ul>
+        </div>
+
+        <table class="options-table">
+          <thead>
+            <tr><th class="col-mastery" style="width: 48px; text-align: center;">Học</th>
+              <th class="col-req">Yêu cầu / Tình huống trong đề thi</th>
+              <th class="col-opt">Tùy chọn / Giải pháp chính xác</th>
+              <th class="col-note">Bẫy & Lưu ý mấu chốt</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-item-id="chk_item_18"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_18" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Triệt tiêu hiện tượng khởi động chậm (Cold Start) của hàm Lambda</td>
+              <td>Bật <code>Provisioned Concurrency</code></td>
+              <td>Khởi tạo sẵn một số container thực thi ở trạng thái nóng 24/7 để đáp ứng tức thì.</td>
+            </tr>
+            <tr data-item-id="chk_item_19"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_19" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Hàng nghìn hàm Lambda đồng thời làm quá tải sập Database</td>
+              <td>Cấu hình <code>Reserved Concurrency</code> hoặc dùng <code>RDS Proxy</code></td>
+              <td>Reserved Concurrency giới hạn trần số instance Lambda tối đa; RDS Proxy gom connection pool.</td>
+            </tr>
+            <tr data-item-id="chk_item_20"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_20" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Cho phép Lambda truy cập Database/Cache trong Private Subnet</td>
+              <td>Gán <code>VPC Configuration</code> cho Lambda</td>
+              <td>Yêu cầu IAM Role của Lambda phải có quyền <code>AWSLambdaVPCAccessExecutionRole</code> để tạo ENI trong Subnet.</td>
+            </tr>
+            <tr data-item-id="chk_item_21"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_21" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Deploy code web app không cần dựng hạ tầng, vẫn xem được cấu hình máy chủ</td>
+              <td>Dùng <code>AWS Elastic Beanstalk</code></td>
+              <td>PaaS hỗ trợ Java, .NET, Node, Python... Triển khai kiểu <b>Immutable</b> hoặc <b>Blue/Green</b> để zero downtime.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+<section id="s3-storage">
+      <h2 class="section-title">4. Amazon S3 & Object Storage Toàn Tập</h2>
+
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-name">Amazon Simple Storage Service (S3)</div>
+          <span class="service-tag tag-core">Domain 1, 2, 4 (Storage Core)</span>
+        </div>
+
+        <div class="theory-block">
+          <h4>📖 Lý thuyết cốt lõi & 8 Lớp lưu trữ (Storage Classes):</h4>
+          <ul>
+            <li><b>Bản chất:</b> Lưu trữ hướng đối tượng (Object Storage), không giới hạn dung lượng, kích thước 1 file từ 0 byte đến tối đa <b>5 TB</b>. Độ bền (Durability) <b>99.999999999% (11 số 9)</b> trên mọi storage class (trừ One Zone-IA).</li>
+            <li><b>S3 Standard:</b> Dữ liệu truy cập thường xuyên, độ trễ mili-giây, đa vùng (Multi-AZ).</li>
+            <li><b>S3 Standard-IA (Infrequent Access):</b> Lưu trữ rẻ hơn, nhưng tính phí khi đọc (retrieval fee). Lưu tối thiểu 30 ngày.</li>
+            <li><b>S3 One Zone-IA:</b> Chỉ lưu trên 1 AZ duy nhất, rẻ hơn Standard-IA 20%. Mất dữ liệu nếu AZ đó bị hủy diệt. Dùng cho bản backup thứ 2 có thể tạo lại được.</li>
+            <li><b>S3 Glacier Instant Retrieval:</b> Lưu trữ lâu dài, truy xuất chỉ vài lần/năm nhưng <b>lấy lại dữ liệu trong mili-giây</b>. Lưu tối thiểu 90 ngày.</li>
+            <li><b>S3 Glacier Flexible Retrieval:</b> Lấy dữ liệu theo 3 tốc độ: <i>Expedited</i> (1-5 phút), <i>Standard</i> (3-5 giờ), <i>Bulk</i> (5-12 giờ - miễn phí). Lưu tối thiểu 90 ngày.</li>
+            <li><b>S3 Glacier Deep Archive:</b> Lớp lưu trữ rẻ nhất thế giới, dùng cho dữ liệu tuân thủ pháp lý lưu 7-10 năm. Lấy dữ liệu: Standard (12 giờ), Bulk (48 giờ). Lưu tối thiểu 180 ngày.</li>
+            <li><b>S3 Intelligent-Tiering:</b> Tự động luân chuyển giữa các tier dựa trên thói quen đọc mà <b>không mất phí truy xuất dữ liệu</b>. Tốt nhất khi không rõ chu kỳ sử dụng.</li>
+            <li><b>S3 Express One Zone:</b> Lớp lưu trữ mới cho ứng dụng AI/ML đòi hỏi độ trễ đọc/ghi siêu thấp (single-digit ms).</li>
+          </ul>
+        </div>
+
+        <table class="options-table">
+          <thead>
+            <tr><th class="col-mastery" style="width: 48px; text-align: center;">Học</th>
+              <th class="col-req">Yêu cầu / Tình huống trong đề thi</th>
+              <th class="col-opt">Tùy chọn / Giải pháp chính xác</th>
+              <th class="col-note">Bẫy & Lưu ý mấu chốt</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-item-id="chk_item_23"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_23" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Yêu cầu luật định: cấm sửa/xóa file trong X năm (WORM)</td>
+              <td>Bật <code>S3 Object Lock</code> (Compliance Mode)</td>
+              <td><b>Compliance Mode:</b> Kể cả tài khoản Root cũng không xóa được.<br><b>Governance Mode:</b> Admin có quyền đặc biệt mới xóa được.<br><em>Phải bật Versioning trước.</em></td>
+            </tr>
+            <tr data-item-id="chk_item_24"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_24" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Sao chép file sang Region khác để Disaster Recovery</td>
+              <td><code>S3 Cross-Region Replication (CRR)</code></td>
+              <td>Bắt buộc phải bật <b>Versioning</b> ở cả 2 bucket nguồn và đích.</td>
+            </tr>
+            <tr data-item-id="chk_item_25"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_25" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Upload file lớn (> 100MB) bị gián đoạn mạng</td>
+              <td>Dùng <code>Multipart Upload</code></td>
+              <td>Bắt buộc với file > 5GB, chia nhỏ upload song song, đứt đoạn nào tải lại đoạn đó.</td>
+            </tr>
+            <tr data-item-id="chk_item_26"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_26" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Tăng tốc upload file từ xa trên toàn cầu vào S3</td>
+              <td>Bật <code>S3 Transfer Acceleration</code></td>
+              <td>Dữ liệu đi qua Edge Location gần nhất của CloudFront rồi chạy trên đường trục AWS.</td>
+            </tr>
+            <tr data-item-id="chk_item_27"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_27" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Cấp quyền cho user ngoài tải 1 file tạm thời không cần IAM</td>
+              <td>Tạo <code>S3 Pre-signed URL</code></td>
+              <td>Link có gắn sẵn token xác thực và thời hạn hết hạn (vài phút/giờ).</td>
+            </tr>
+            <tr data-item-id="chk_item_28"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_28" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Chỉ cho phép CloudFront đọc S3, chặn gọi trực tiếp S3 URL</td>
+              <td>Bật <code>Origin Access Control (OAC)</code></td>
+              <td>Chuẩn mới thay thế OAI cũ. Phối hợp với S3 Bucket Policy cho phép CloudFront ARN.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+<section id="block-file-storage">
+      <h2 class="section-title">5. Ổ Cứng Khối & File Chia Sẻ (EBS, EFS, FSx)</h2>
+
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-name">EBS vs EFS vs FSx Family</div>
+          <span class="service-tag tag-core">Domain 2 & 3 (Storage Types)</span>
+        </div>
+
+        <div class="comparison-box">
+          <div class="comparison-title">⚖️ Bảng so sánh "Kinh Điển" 4 dịch vụ lưu trữ trong đề thi:</div>
+          <table class="options-table">
+            <tr><th class="col-mastery" style="width: 48px; text-align: center;">Học</th>
+              <th>Dịch vụ</th>
+              <th>Loại lưu trữ</th>
+              <th>Khả năng chia sẻ</th>
+              <th>Hệ điều hành phù hợp</th>
+              <th>Từ khóa đề thi đặc trưng</th>
+            </tr>
+            <tr data-item-id="chk_item_30"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_30" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td><b>Amazon EBS</b></td>
+              <td>Block Storage (Ổ cứng ảo)</td>
+              <td>1 EC2 duy nhất (trừ io1/io2 Multi-Attach trong 1 AZ)</td>
+              <td>Linux & Windows</td>
+              <td>Cài OS, gắn database, snapshot lưu trên S3, ràng buộc trong 1 AZ.</td>
+            </tr>
+            <tr data-item-id="chk_item_31"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_31" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td><b>Amazon EFS</b></td>
+              <td>File Storage (NFSv4)</td>
+              <td>Hàng trăm EC2 đọc/ghi đồng thời</td>
+              <td><b>Chỉ máy chủ Linux</b></td>
+              <td>Multi-AZ, chia sẻ file web farm, POSIX standard, tự co giãn.</td>
+            </tr>
+            <tr data-item-id="chk_item_32"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_32" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td><b>FSx for Windows</b></td>
+              <td>File Storage (SMB)</td>
+              <td>Nhiều máy chủ đọc/ghi</td>
+              <td><b>Windows</b> (và Linux)</td>
+              <td><b>SMB protocol, Microsoft Active Directory</b>, DFS namespaces.</td>
+            </tr>
+            <tr data-item-id="chk_item_33"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_33" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td><b>FSx for Lustre</b></td>
+              <td>File Storage song song phân tán</td>
+              <td>Compute cluster</td>
+              <td>Linux</td>
+              <td><b>HPC, Machine Learning, triệu IOPS</b>, gắn trực tiếp S3 làm kho dữ liệu.</td>
+            </tr>
+          </table>
+        </div>
+
+        <table class="options-table">
+          <thead>
+            <tr><th class="col-mastery" style="width: 48px; text-align: center;">Học</th>
+              <th class="col-req">Yêu cầu / Tình huống trong đề thi</th>
+              <th class="col-opt">Tùy chọn / Giải pháp chính xác</th>
+              <th class="col-note">Bẫy & Lưu ý mấu chốt</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-item-id="chk_item_35"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_35" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Cần ổ cứng SSD đa dụng, có thể tăng IOPS độc lập với dung lượng</td>
+              <td>Chọn EBS loại <code>gp3</code></td>
+              <td>Mặc định 3,000 IOPS và 125 MB/s, rẻ hơn gp2 20%.</td>
+            </tr>
+            <tr data-item-id="chk_item_36"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_36" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Khôi phục volume từ snapshot ngay lập tức không bị độ trễ khởi tạo</td>
+              <td>Bật <code>Fast Snapshot Restore (FSR)</code></td>
+              <td>Loại bỏ độ trễ lazy-loading khi restore snapshot.</td>
+            </tr>
+            <tr data-item-id="chk_item_37"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_37" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Tự động mã hóa tất cả các ổ cứng EBS mới tạo trong tài khoản</td>
+              <td>Bật <code>EBS Encryption by Default</code></td>
+              <td>Cấu hình ở cấp Region, áp dụng cho mọi volume và snapshot mới tạo.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+<section id="databases-sql">
+      <h2 class="section-title">6. Cơ Sở Dữ Liệu Quan Hệ (Amazon RDS & Aurora)</h2>
+
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-name">Amazon RDS & Amazon Aurora</div>
+          <span class="service-tag tag-core">Domain 2 & 3 (Databases)</span>
+        </div>
+
+        <div class="theory-block">
+          <h4>📖 Lý thuyết cốt lõi & Phân biệt kiến trúc:</h4>
+          <ul>
+            <li><b>RDS Multi-AZ Deployment:</b> 
+              Tạo 1 instance Master và 1 instance Standby đồng bộ (Synchronous) ở AZ khác. 
+              <b>Mục đích: High Availability & Tự động phục hồi lỗi (Failover)</b>. 
+              <i>Standby không nhận truy vấn đọc/ghi. Multi-AZ KHÔNG tăng tốc độ đọc!</i>
+            </li>
+            <li><b>RDS Read Replicas:</b> 
+              Nhân bản bất đồng bộ (Asynchronous) tối đa 15 bản sao. 
+              <b>Mục đích: Tăng tốc độ đọc (Read-heavy)</b>. Có thể tạo cross-AZ hoặc cross-Region.
+            </li>
+            <li><b>Kiến trúc Amazon Aurora:</b> 
+              Cơ sở dữ liệu đám mây độc quyền của AWS (tương thích MySQL/PostgreSQL, nhanh gấp 5 lần MySQL). 
+              Dữ liệu tự động nhân bản thành <b>6 bản sao trải rộng trên 3 AZs</b>. Chịu được mất trọn vẹn 1 AZ mà vẫn ghi/đọc bình thường.
+            </li>
+            <li><b>Aurora Serverless v2:</b> Tự động co giãn theo từng phân số ACU (Aurora Capacity Units) trong vài phần trăm giây. Phù hợp ứng dụng tải thất thường.</li>
+          </ul>
+        </div>
+
+        <table class="options-table">
+          <thead>
+            <tr><th class="col-mastery" style="width: 48px; text-align: center;">Học</th>
+              <th class="col-req">Yêu cầu / Tình huống trong đề thi</th>
+              <th class="col-opt">Tùy chọn / Giải pháp chính xác</th>
+              <th class="col-note">Bẫy & Lưu ý mấu chốt</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-item-id="chk_item_39"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_39" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Hàng nghìn kết nối Lambda làm cạn kiệt connection pool DB</td>
+              <td>Bật <code>Amazon RDS Proxy</code></td>
+              <td>Quản lý connection pooling tập trung, giảm thời gian failover Multi-AZ xuống 66%.</td>
+            </tr>
+            <tr data-item-id="chk_item_40"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_40" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Đăng nhập database không cần lưu mật khẩu cứng trong code</td>
+              <td>Bật <code>IAM Database Authentication</code></td>
+              <td>Dùng token xác thực ngắn hạn từ AWS STS (thời hạn 15 phút).</td>
+            </tr>
+            <tr data-item-id="chk_item_41"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_41" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Khôi phục DB về đúng thời điểm trước khi bị drop nhầm bảng</td>
+              <td>Dùng <code>Point-In-Time Recovery (PITR)</code></td>
+              <td>Kết hợp automated backup + transaction log để rollback về bất kỳ giây nào.</td>
+            </tr>
+            <tr data-item-id="chk_item_42"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_42" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Đọc ghi dữ liệu toàn cầu với độ trễ replication dưới 1 giây</td>
+              <td>Dùng <code>Aurora Global Database</code></td>
+              <td>1 Primary Region (ghi/đọc) và tối đa 5 Secondary Regions (chỉ đọc). RTO < 1 phút khi cần failover thảm họa.</td>
+            </tr>
+            <tr data-item-id="chk_item_43"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_43" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Đồng bộ dữ liệu Aurora sang Redshift mà KHÔNG viết ETL Glue</td>
+              <td>Bật <code>Aurora Zero-ETL Integration with Redshift</code> <span class="service-tag tag-2026">2026 Focus</span></td>
+              <td>Dữ liệu giao dịch tự động replicate sang Data Warehouse trong vài giây.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+<section id="databases-nosql">
+      <h2 class="section-title">7. NoSQL & Bộ Nhớ Đệm (DynamoDB & ElastiCache)</h2>
+
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-name">Amazon DynamoDB & Amazon ElastiCache</div>
+          <span class="service-tag tag-core">Domain 3 (In-Memory & NoSQL)</span>
+        </div>
+
+        <div class="theory-block">
+          <h4>📖 Lý thuyết cốt lõi DynamoDB:</h4>
+          <ul>
+            <li><b>Bản chất:</b> Cơ sở dữ liệu NoSQL Key-Value và Document hoàn toàn Serverless. Quy mô không giới hạn, độ trễ tính bằng mili-giây đơn chữ số (single-digit millisecond).</li>
+            <li><b>Primary Key:</b> Partition Key (đơn vị băm) hoặc Hỗn hợp (Partition Key + Sort Key).</li>
+            <li><b>LSI (Local Secondary Index):</b> Cùng Partition Key, khác Sort Key. <b>Bắt buộc tạo ngay khi tạo bảng</b>.</li>
+            <li><b>GSI (Global Secondary Index):</b> Khác cả Partition Key và Sort Key. Tạo và xóa bất cứ lúc nào.</li>
+          </ul>
+        </div>
+
+        <table class="options-table">
+          <thead>
+            <tr><th class="col-mastery" style="width: 48px; text-align: center;">Học</th>
+              <th class="col-req">Yêu cầu / Tình huống trong đề thi</th>
+              <th class="col-opt">Tùy chọn / Giải pháp chính xác</th>
+              <th class="col-note">Bẫy & Lưu ý mấu chốt</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-item-id="chk_item_45"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_45" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Đưa độ trễ đọc của DynamoDB từ mili-giây xuống micro-giây</td>
+              <td>Bật <code>DynamoDB Accelerator (DAX)</code></td>
+              <td>In-memory cache native cho DynamoDB, không cần viết lại logic code ứng dụng.</td>
+            </tr>
+            <tr data-item-id="chk_item_46"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_46" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Tự động dọn dẹp các session hết hạn sau 24h không tốn chi phí WCU</td>
+              <td>Bật <code>DynamoDB Time to Live (TTL)</code></td>
+              <td>Chỉ định 1 attribute chứa timestamp epoch, DynamoDB tự xóa bản ghi quá hạn miễn phí.</td>
+            </tr>
+            <tr data-item-id="chk_item_47"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_47" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Bắt mọi thao tác Insert/Update/Delete trên DynamoDB để gọi Lambda</td>
+              <td>Bật <code>DynamoDB Streams</code></td>
+              <td>Cung cấp luồng dữ liệu thời gian thực các thay đổi để trigger Lambda hoặc replicate.</td>
+            </tr>
+            <tr data-item-id="chk_item_48"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_48" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Cơ sở dữ liệu phân tán toàn cầu Multi-Region Active-Active</td>
+              <td>Dùng <code>DynamoDB Global Tables</code></td>
+              <td>Đọc và ghi được ở bất kỳ Region nào, tự động sao chép 2 chiều. Yêu cầu bật Streams.</td>
+            </tr>
+            <tr data-item-id="chk_item_49"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_49" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Cache dữ liệu phức tạp (Sorted sets, Hashes) cần Multi-AZ failover</td>
+              <td>Dùng <code>Amazon ElastiCache Redis</code></td>
+              <td>Hỗ trợ cấu trúc dữ liệu, có sao lưu/khôi phục và tự động chuyển vùng khi sập.</td>
+            </tr>
+            <tr data-item-id="chk_item_50"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_50" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Cache key-value đơn giản thuần in-memory đa luồng (multi-thread)</td>
+              <td>Dùng <code>Amazon ElastiCache Memcached</code></td>
+              <td>Không hỗ trợ Multi-AZ failover hay backup.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+<section id="messaging-decoupling">
+      <h2 class="section-title">8. Hàng Đợi & Kiến Trúc Tách Rời (SQS, SNS, EventBridge)</h2>
+
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-name">Decoupling & Event-Driven Architecture</div>
+          <span class="service-tag tag-core">Domain 2 (Resilient Core)</span>
+        </div>
+
+        <div class="comparison-box">
+          <div class="comparison-title">⚖️ So sánh kinh điển: SQS vs SNS vs EventBridge</div>
+          <ul>
+            <li><b>Amazon SQS (Pull):</b> Hàng đợi tin nhắn (Queue). Worker phải chủ động kéo tin nhắn về xử lý (Pull model). Dùng để **đệm tải (buffer)** chống quá tải hệ thống.</li>
+            <li><b>Amazon SNS (Push):</b> Mô hình Pub/Sub. Bắn 1 tin nhắn đẩy ngay lập tức tới hàng nghìn subscriber (**Fan-out pattern**: đẩy tới nhiều SQS, Lambda, Email).</li>
+            <li><b>Amazon EventBridge (Bus):</b> Event Bus kết nối các dịch vụ AWS và SaaS bên thứ 3. Có khả năng **lọc sự kiện dựa trên nội dung JSON payload** và lưu vết phát lại (**Archive & Replay**).</li>
+          </ul>
+        </div>
+
+        <table class="options-table">
+          <thead>
+            <tr><th class="col-mastery" style="width: 48px; text-align: center;">Học</th>
+              <th class="col-req">Yêu cầu / Tình huống trong đề thi</th>
+              <th class="col-opt">Tùy chọn / Giải pháp chính xác</th>
+              <th class="col-note">Bẫy & Lưu ý mấu chốt</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-item-id="chk_item_52"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_52" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Tránh 2 worker cùng xử lý trùng 1 tin nhắn trong SQS</td>
+              <td>Tăng <code>Visibility Timeout</code></td>
+              <td>Thời gian tin nhắn bị ẩn với worker khác trong khi đang được xử lý (mặc định 30s).</td>
+            </tr>
+            <tr data-item-id="chk_item_53"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_53" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Giảm số lượng request rỗng và tiết kiệm chi phí SQS</td>
+              <td>Bật <code>Long Polling</code> (WaitTimeSeconds > 0)</td>
+              <td>Worker đợi tối đa 20s cho tới khi có tin mới tới thay vì trả về ngay lập tức.</td>
+            </tr>
+            <tr data-item-id="chk_item_54"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_54" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Đảm bảo tin nhắn xử lý đúng thứ tự từng khách và không trùng lặp</td>
+              <td><code>SQS FIFO Queue</code> + <code>MessageGroupID</code></td>
+              <td>Tên queue phải có đuôi <code>.fifo</code>. MessageGroupID gom tuần tự theo khách; MessageDeduplicationID chống trùng trong 5 phút.</td>
+            </tr>
+            <tr data-item-id="chk_item_55"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_55" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Tin nhắn xử lý lỗi nhiều lần làm nghẽn hàng đợi</td>
+              <td>Cấu hình <code>Dead-Letter Queue (DLQ)</code></td>
+              <td>Đặt tham số <code>maxReceiveCount</code>, lỗi vượt ngưỡng sẽ tự đẩy sang DLQ.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+<section id="security-identity">
+      <h2 class="section-title">9. Bảo Mật & Danh Tính (IAM, KMS, Secrets, Organizations)</h2>
+
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-name">Identity, Encryption & Multi-Account</div>
+          <span class="service-tag tag-core">Domain 1 (Security Core - 30%)</span>
+        </div>
+
+        <div class="theory-block">
+          <h4>📖 Lý thuyết cốt lõi:</h4>
+          <ul>
+            <li><b>IAM Role:</b> Cấp quyền tạm thời cho service AWS (EC2, Lambda) hoặc Cross-account. Tuyệt đối không lưu Access Key cứng trong code.</li>
+            <li><b>AWS Organizations & SCP (Service Control Policies):</b> SCP đóng vai trò là "trần quyền hạn" (guardrail). SCP <b>không cấp quyền</b> trực tiếp cho user. Nếu SCP Deny thì kể cả IAM Admin trong account con cũng bị chặn. Root Management account không bị ảnh hưởng bởi SCP.</li>
+            <li><b>KMS Key Policy:</b> Muốn ai truy cập được KMS Key thì bắt buộc Key Policy của khóa đó phải cho phép (kể cả quyền IAM Admin cũng vô dụng nếu Key Policy không cấp).</li>
+          </ul>
+        </div>
+
+        <table class="options-table">
+          <thead>
+            <tr><th class="col-mastery" style="width: 48px; text-align: center;">Học</th>
+              <th class="col-req">Yêu cầu / Tình huống trong đề thi</th>
+              <th class="col-opt">Tùy chọn / Giải pháp chính xác</th>
+              <th class="col-note">Bẫy & Lưu ý mấu chốt</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-item-id="chk_item_57"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_57" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Tự động xoay mật khẩu Database định kỳ 30 ngày một lần</td>
+              <td><code>AWS Secrets Manager</code> (Automatic Rotation)</td>
+              <td>Tự động gọi Lambda do AWS cung cấp để đổi pass trên DB và lưu pass mới.</td>
+            </tr>
+            <tr data-item-id="chk_item_58"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_58" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Lưu trữ chuỗi cấu hình plaintext hoặc SecureString miễn phí</td>
+              <td><code>SSM Parameter Store</code></td>
+              <td>Miễn phí với Standard tier. Tích hợp KMS cho SecureString. Không có sẵn auto-rotation cho DB.</td>
+            </tr>
+            <tr data-item-id="chk_item_59"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_59" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Mã hóa dữ liệu tại chỗ và tự động đổi khóa hàng năm</td>
+              <td>KMS <code>Customer Managed Key</code> với <code>Automatic Rotation</code></td>
+              <td>Tự động xoay khóa mỗi 1 năm một lần, vẫn giữ khóa cũ để giải mã dữ liệu cũ.</td>
+            </tr>
+            <tr data-item-id="chk_item_60"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_60" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Mã hóa và giải mã dữ liệu cross-region không cần re-encrypt</td>
+              <td>Dùng KMS <code>Multi-Region Keys</code></td>
+              <td>Cùng Key ID và Key Material trên nhiều Region khác nhau.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+<section id="network-security">
+      <h2 class="section-title">10. Tường Lửa & Giám Sát An Ninh (WAF, Shield, GuardDuty)</h2>
+
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-name">Edge Protection & Threat Detection</div>
+          <span class="service-tag tag-core">Domain 1 (Security Core)</span>
+        </div>
+
+        <div class="comparison-box">
+          <div class="comparison-title">⚖️ Phân biệt 5 công cụ an ninh hay nhầm lẫn nhất:</div>
+          <ul>
+            <li><b>AWS WAF:</b> Tường lửa lớp ứng dụng (<b>Layer 7</b>). Chặn SQL Injection, XSS, rate-limit chặn IP spam. Gắn vào ALB, CloudFront, API Gateway.</li>
+            <li><b>AWS Shield:</b> Chống tấn công từ chối dịch vụ <b>DDoS (Layer 3/4)</b>. Standard (miễn phí), Advanced ($3,000/tháng kèm đội SRT phản ứng nhanh).</li>
+            <li><b>Amazon GuardDuty:</b> Dùng AI/ML phân tích VPC Flow Logs, DNS Logs, CloudTrail để <b>phát hiện xâm nhập, máy đào coin, tài khoản bị hack</b>.</li>
+            <li><b>Amazon Inspector:</b> Tự động quét <b>lỗ hổng bảo mật phần mềm (CVE)</b> trên EC2 instances, ECR container images và Lambda.</li>
+            <li><b>Amazon Macie:</b> Dùng AI quét trên <b>Amazon S3</b> để tìm kiếm và bảo vệ <b>dữ liệu nhạy cảm PII</b> (số thẻ ngân hàng, căn cước công dân).</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+<section id="analytics-bigdata">
+      <h2 class="section-title">11. Phân Tích Dữ Liệu & Big Data (Kinesis, Athena, Glue, Redshift, EMR)</h2>
+
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-name">Amazon Kinesis (Streaming Data Processing)</div>
+          <span class="service-tag tag-core">Domain 2 & 3 (Analytics Core)</span>
+        </div>
+
+        <div class="comparison-box">
+          <div class="comparison-title">⚖️ So sánh kinh điển: Kinesis Data Streams vs Kinesis Data Firehose</div>
+          <table class="options-table">
+            <tr><th class="col-mastery" style="width: 48px; text-align: center;">Học</th>
+              <th>Đặc tính</th>
+              <th>Kinesis Data Streams</th>
+              <th>Kinesis Data Firehose</th>
+            </tr>
+            <tr data-item-id="chk_item_62"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_62" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td><b>Bản chất & Vận hành</b></td>
+              <td>Dữ liệu thời gian thực (Real-time, < 1s). Quản lý theo <b>Shards</b> (hoặc On-Demand).</td>
+              <td>Tự động nạp dữ liệu gần thời gian thực (Near real-time, độ trễ tối thiểu 60s). <b>Hoàn toàn Serverless</b>.</td>
+            </tr>
+            <tr data-item-id="chk_item_63"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_63" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td><b>Lưu trữ dữ liệu</b></td>
+              <td>Lưu giữ dữ liệu từ <b>1 đến 365 ngày</b>. Nhiều consumer có thể đọc đồng thời.</td>
+              <td><b>Không lưu giữ dữ liệu</b>. Chỉ chuyển tiếp dữ liệu đến đích rồi xóa.</td>
+            </tr>
+            <tr data-item-id="chk_item_64"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_64" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td><b>Ứng dụng Consumer</b></td>
+              <td>Phải <b>tự viết code Consumer</b> (dùng SDK, KCL - Kinesis Client Library hoặc Lambda).</td>
+              <td><b>Không cần viết code consumer</b>. Tự nạp thẳng vào S3, Redshift, OpenSearch, Splunk.</td>
+            </tr>
+            <tr data-item-id="chk_item_65"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_65" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td><b>Chuyển đổi dữ liệu</b></td>
+              <td>Tự xử lý trong code consumer.</td>
+              <td>Có thể gắn kèm <b>AWS Lambda</b> để chuyển đổi format (Convert JSON sang Parquet/ORC).</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="theory-block">
+          <h4>📖 Lý thuyết cốt lõi Amazon Athena, AWS Glue & Amazon EMR:</h4>
+          <ul>
+            <li><b>Amazon Athena:</b> Công cụ truy vấn Serverless tương thích chuẩn ANSI SQL trực tiếp trên các file (CSV, JSON, ORC, Parquet) lưu trên <b>Amazon S3</b> mà không cần dựng Database. Tính tiền theo số byte dữ liệu được quét (quét càng ít file càng rẻ).
+              <br>👉 <i>Mẹo tối ưu chi phí & tốc độ cho Athena:</i> Luôn chuyển đổi dữ liệu sang dạng cột (<b>Parquet / ORC</b>) và tạo phân vùng thư mục (<b>Partitioning</b> theo ngày/tháng) để Athena chỉ quét đúng thư mục cần thiết.
+            </li>
+            <li><b>AWS Glue:</b> Dịch vụ ETL (Extract, Transform, Load) Serverless.
+              <br>• <i>Glue Crawler:</i> Tự động quét dữ liệu trên S3/RDS để suy đoán schema và lưu vào <b>Glue Data Catalog</b> (làm metadata cho Athena truy vấn).
+              <br>• <i>Glue Job:</i> Chạy code Spark/Python để làm sạch và chuyển đổi định dạng dữ liệu tự động.
+            </li>
+            <li><b>Amazon EMR (Elastic MapReduce):</b> Chạy cụm Hadoop, Spark, Presto để xử lý Big Data khổng lồ.
+              <br>👉 <i>Mẹo cấu hình tiết kiệm tiền trong đề thi:</i> <b>Master Node</b> (chạy On-Demand để giữ cụm), <b>Core Nodes</b> (chứa HDFS, chạy On-Demand/RI), <b>Task Nodes</b> (chỉ tính toán, mất không sao $\rightarrow$ <b>luôn dùng Spot Instances</b> để giảm 90% chi phí).
+            </li>
+            <li><b>Amazon Redshift & Redshift Spectrum:</b> Data Warehouse dạng cột (OLAP). <b>Redshift Spectrum</b> cho phép chạy query SQL kết hợp trực tiếp dữ liệu trong bảng Redshift với hàng trăm Terabyte file đang lưu trên Amazon S3 mà không cần nạp vào ổ đĩa Redshift.</li>
+          </ul>
+        </div>
+
+        <table class="options-table">
+          <thead>
+            <tr><th class="col-mastery" style="width: 48px; text-align: center;">Học</th>
+              <th class="col-req">Yêu cầu / Tình huống trong đề thi</th>
+              <th class="col-opt">Tùy chọn / Giải pháp chính xác</th>
+              <th class="col-note">Bẫy & Lưu ý mấu chốt</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-item-id="chk_item_67"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_67" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Nạp dữ liệu streaming tự động vào S3 hoặc Redshift ít tốn công nhất</td>
+              <td>Dùng <code>Kinesis Data Firehose</code></td>
+              <td>Serverless hoàn toàn, cấu hình buffer time/size, không cần quản lý shard hay viết consumer.</td>
+            </tr>
+            <tr data-item-id="chk_item_68"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_68" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Truy vấn dữ liệu log dạng file trên S3 bằng câu lệnh SQL chuẩn không cần DB</td>
+              <td>Dùng <code>Amazon Athena</code></td>
+              <td>Tích hợp Glue Data Catalog. Tối ưu chi phí bằng định dạng Apache Parquet.</td>
+            </tr>
+            <tr data-item-id="chk_item_69"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_69" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Tự động trích xuất cấu trúc bảng (schema) từ dữ liệu phi cấu trúc trên S3</td>
+              <td>Dùng <code>AWS Glue Crawler</code></td>
+              <td>Tạo metadata bảng tự động lưu vào AWS Glue Data Catalog.</td>
+            </tr>
+            <tr data-item-id="chk_item_70"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_70" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Chạy cụm Spark xử lý hàng chục Terabyte dữ liệu với chi phí rẻ nhất</td>
+              <td>Amazon EMR với Task nodes dùng <code>Spot Instances</code></td>
+              <td>Task nodes không lưu dữ liệu HDFS nên khi Spot bị thu hồi cụm vẫn an toàn.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+<section id="monitoring-management">
+      <h2 class="section-title">12. Giám Sát, Quản Trị & Kiểm Toán (CloudWatch, CloudTrail, Config, SSM)</h2>
+
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-name">Bộ 3 Giám Sát Kinh Điển: CloudWatch vs CloudTrail vs AWS Config</div>
+          <span class="service-tag tag-core">Domain 1 & 4 (Governance)</span>
+        </div>
+
+        <div class="comparison-box">
+          <div class="comparison-title">⚖️ Bảng phân biệt mục đích sử dụng trong đề thi:</div>
+          <table class="options-table">
+            <tr><th class="col-mastery" style="width: 48px; text-align: center;">Học</th>
+              <th>Dịch vụ</th>
+              <th>Theo dõi cái gì?</th>
+              <th>Câu hỏi cốt lõi giải quyết</th>
+              <th>Ví dụ tình huống đề thi</th>
+            </tr>
+            <tr data-item-id="chk_item_72"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_72" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td><b>Amazon CloudWatch</b></td>
+              <td><b>Hiệu năng & Vận hành</b> (Metrics, CPU, RAM, Network, Logs, Alarms)</td>
+              <td><i>"Hệ thống đang chạy như thế nào? Có bị quá tải không?"</i></td>
+              <td>Bắn cảnh báo khi CPU > 80% để kích hoạt Auto Scaling Group thêm máy ảo.</td>
+            </tr>
+            <tr data-item-id="chk_item_73"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_73" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td><b>AWS CloudTrail</b></td>
+              <td><b>Hành vi & Lịch sử gọi API</b> (User, Role, IP nguồn, Timestamp)</td>
+              <td><i>"Ai đã làm gì, vào lúc nào, từ địa chỉ IP nào?"</i></td>
+              <td>Truy vết ai đã xóa S3 bucket hoặc đổi mật khẩu IAM Admin để kiểm toán bảo mật.</td>
+            </tr>
+            <tr data-item-id="chk_item_74"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_74" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td><b>AWS Config</b></td>
+              <td><b>Cấu hình & Tính tuân thủ</b> (Configuration History & Compliance)</td>
+              <td><i>"Tài nguyên có đúng tiêu chuẩn không? Ai đã sửa rule cấu hình?"</i></td>
+              <td>Phát hiện có Security Group nào đang mở port 22 cho cả thế giới (`0.0.0.0/0`) và tự động đóng lại.</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="theory-block">
+          <h4>📖 Lý thuyết cốt lõi AWS Systems Manager (SSM):</h4>
+          <ul>
+            <li><b>SSM Session Manager:</b> Cho phép quản trị viên đăng nhập shell/terminal vào EC2 instances trực tiếp qua trình duyệt web hoặc AWS CLI mà <b>KHÔNG CẦN mở cổng inbound 22/3389, KHÔNG CẦN Public IP, KHÔNG CẦN Bastion Host</b>. (Mọi lệnh chạy đều được ghi log vào S3/CloudWatch Logs để kiểm toán).</li>
+            <li><b>SSM Run Command:</b> Chạy script hoặc command điều khiển hàng loạt máy ảo EC2 cùng lúc một cách an toàn mà không cần SSH vào từng máy.</li>
+            <li><b>SSM Patch Manager:</b> Lên lịch tự động quét và cài đặt các bản vá lỗi bảo mật (OS patches) cho hàng trăm máy chủ EC2.</li>
+          </ul>
+        </div>
+
+        <table class="options-table">
+          <thead>
+            <tr><th class="col-mastery" style="width: 48px; text-align: center;">Học</th>
+              <th class="col-req">Yêu cầu / Tình huống trong đề thi</th>
+              <th class="col-opt">Tùy chọn / Giải pháp chính xác</th>
+              <th class="col-note">Bẫy & Lưu ý mấu chốt</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-item-id="chk_item_76"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_76" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Cần số liệu CloudWatch CPU/Network cập nhật mỗi 1 phút thay vì 5 phút</td>
+              <td>Bật <code>Detailed Monitoring</code> cho EC2</td>
+              <td>Mặc định là Basic Monitoring (5 phút). Detailed Monitoring thu thập mỗi 1 phút (tính phí).</td>
+            </tr>
+            <tr data-item-id="chk_item_77"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_77" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Tự động sửa lỗi cấu hình sai (VD: Security Group mở port nguy hiểm)</td>
+              <td>AWS Config kết hợp <code>SSM Automation Remediation</code></td>
+              <td>Khi AWS Config Rule phát hiện non-compliant, tự động kích hoạt tài liệu SSM Automation để sửa.</td>
+            </tr>
+            <tr data-item-id="chk_item_78"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_78" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>SSH vào máy chủ trong Private Subnet an toàn nhất không mở port</td>
+              <td>Dùng <code>SSM Session Manager</code></td>
+              <td>Cài SSM Agent trên máy ảo, gán IAM Role có policy <code>AmazonSSMManagedInstanceCore</code>.</td>
+            </tr>
+            <tr data-item-id="chk_item_79"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_79" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Phát hiện hành vi gọi API bất thường (ví dụ tự dưng bị gọi 10,000 lần)</td>
+              <td>Bật <code>CloudTrail Insights</code></td>
+              <td>Tự động phân tích baseline hành vi gọi API thông thường và cảnh báo khi có đột biến.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+<section id="migration-hybrid">
+      <h2 class="section-title">13. Di Chuyển Dữ Liệu & Kết Nối Lai (DataSync, Snowball, DMS, Storage Gateway)</h2>
+
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-name">Hybrid Cloud & Data Migration</div>
+          <span class="service-tag tag-core">Domain 2 & 4 (Migration)</span>
+        </div>
+
+        <div class="comparison-box">
+          <div class="comparison-title">⚖️ So sánh công cụ truyền dữ liệu On-premise lên AWS:</div>
+          <ul>
+            <li><b>AWS DataSync (Truyền qua mạng Online):</b> Tự động đồng bộ file dung lượng lớn giữa On-premise và AWS (S3, EFS, FSx) qua mạng. Nhanh gấp 10 lần các tool open-source (rsync) nhờ cơ chế tăng tốc đường truyền riêng. Có lập lịch tự động.</li>
+            <li><b>AWS Transfer Family:</b> Cổng giao tiếp cho phép đối tác bên ngoài upload file vào thẳng <b>Amazon S3 hoặc EFS</b> bằng các giao thức cũ như <b>SFTP, FTPS, FTP</b> mà không cần sửa code ứng dụng client.</li>
+            <li><b>AWS Snow Family (Vận chuyển vật lý Offline):</b> Dùng khi dữ liệu quá lớn (hàng chục Terabyte đến Petabyte) mà đường truyền mạng quá chậm (mất hàng tuần/tháng):
+              <br>• <i>Snowcone:</i> Thiết bị nhỏ 2.1 kg, 8 TB lưu trữ.
+              <br>• <i>Snowball Edge:</i> Thiết bị vali chống va đập, 80 TB lưu trữ (bản Storage Optimized) hoặc có kèm CPU/GPU tính toán tại chỗ (Compute Optimized).
+              <br>• <i>Snowmobile:</i> Xe container chuyên dụng chuyển dữ liệu lên tới <b>100 Petabytes (PB)</b>.
+            </li>
+          </ul>
+        </div>
+
+        <div class="comparison-box">
+          <div class="comparison-title">⚖️ Phân biệt 3 loại AWS Storage Gateway (Cầu nối lưu trữ On-premise - Cloud):</div>
+          <ul>
+            <li><b>S3 File Gateway:</b> Máy chủ on-premise mount S3 như ổ đĩa mạng chia sẻ (NFS hoặc SMB). Dữ liệu lưu dưới dạng các Object chuẩn trong S3.</li>
+            <li><b>Volume Gateway (iSCSI Block Storage):</b>
+              <br>• <i>Stored Volumes:</i> Toàn bộ dữ liệu lưu tại on-premise, backup định kỳ bất đồng bộ snapshot lên S3.
+              <br>• <i>Cached Volumes:</i> Dữ liệu chính lưu tại S3, chỉ cache dữ liệu thường dùng tại on-premise để tiết kiệm ổ đĩa cục bộ.
+            </li>
+            <li><b>Tape Gateway:</b> Thay thế các băng từ sao lưu vật lý truyền thống (Physical Tape Library) bằng thư viện băng ảo lưu trên S3 Glacier/Deep Archive.</li>
+          </ul>
+        </div>
+
+        <table class="options-table">
+          <thead>
+            <tr><th class="col-mastery" style="width: 48px; text-align: center;">Học</th>
+              <th class="col-req">Yêu cầu / Tình huống trong đề thi</th>
+              <th class="col-opt">Tùy chọn / Giải pháp chính xác</th>
+              <th class="col-note">Bẫy & Lưu ý mấu chốt</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-item-id="chk_item_81"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_81" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Chuyển Database từ On-premise lên RDS với thời gian downtime gần bằng 0</td>
+              <td>AWS DMS với tính năng <code>Change Data Capture (CDC)</code></td>
+              <td>DMS nạp full dữ liệu ban đầu, sau đó CDC sao chép liên tục các thay đổi phát sinh cho tới khi switch-over.</td>
+            </tr>
+            <tr data-item-id="chk_item_82"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_82" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Chuyển DB khác hệ (ví dụ từ Oracle sang PostgreSQL trên AWS)</td>
+              <td>Dùng <code>AWS SCT</code> kết hợp <code>AWS DMS</code></td>
+              <td>AWS Schema Conversion Tool (SCT) chuyển đổi cấu trúc bảng, view, stored procedures; DMS chuyển data.</td>
+            </tr>
+            <tr data-item-id="chk_item_83"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_83" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Chuyển 50 TB dữ liệu lên S3 qua đường mạng 10 Mbps mất hàng tháng</td>
+              <td>Đặt thiết bị vật lý <code>AWS Snowball Edge</code></td>
+              <td>AWS gửi vali Snowball tới, cắm mạng LAN copy dữ liệu rồi gửi bưu điện trả lại AWS để nạp vào S3.</td>
+            </tr>
+            <tr data-item-id="chk_item_84"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_84" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Mã hóa dữ liệu đường truyền khi dùng Direct Connect</td>
+              <td>Thiết lập <code>IPsec VPN over AWS Direct Connect</code></td>
+              <td>Bản thân Direct Connect không tự mã hóa. Phải dựng kết nối VPN IPsec chạy đè lên trên đường cáp Direct Connect.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+<section id="focus-2026">
+      <h2 class="section-title">14. Trọng Tâm Mới 2026 (GenAI & Zero-Trust) <span class="service-tag tag-2026">NEW UPDATES</span></h2>
+
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-name">Amazon Bedrock, Verified Access & Zero-ETL</div>
+          <span class="service-tag tag-2026">2026 Focus</span>
+        </div>
+
+        <table class="options-table">
+          <thead>
+            <tr><th class="col-mastery" style="width: 48px; text-align: center;">Học</th>
+              <th class="col-req">Yêu cầu / Tình huống trong đề thi</th>
+              <th class="col-opt">Tùy chọn / Giải pháp chính xác</th>
+              <th class="col-note">Bẫy & Lưu ý mấu chốt</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-item-id="chk_item_86"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_86" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Tích hợp Generative AI / Foundation Models an toàn từ VPC riêng</td>
+              <td><code>Amazon Bedrock</code> + VPC Interface Endpoint</td>
+              <td>Không đi qua Internet công cộng. Dùng <b>Bedrock Guardrails</b> để lọc prompt độc hại và chống rò rỉ dữ liệu PII.</td>
+            </tr>
+            <tr data-item-id="chk_item_87"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_87" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Nhân viên truy cập ứng dụng nội bộ theo mô hình Zero-Trust KHÔNG cần VPN</td>
+              <td><code>AWS Verified Access</code></td>
+              <td>Xác thực danh tính người dùng (qua IAM Identity Center) và trạng thái an toàn của thiết bị trước khi cấp quyền.</td>
+            </tr>
+            <tr data-item-id="chk_item_88"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_88" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Đồng bộ dữ liệu Aurora sang Redshift mà KHÔNG cần duy trì pipeline ETL Glue</td>
+              <td><code>Aurora Zero-ETL Integration with Redshift</code></td>
+              <td>Tự động hóa sao chép dữ liệu giao dịch sang Data Warehouse trong vài giây.</td>
+            </tr>
+            <tr data-item-id="chk_item_89"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_89" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Tối ưu chi phí phần cứng EC2 / RDS tốt hơn 40%</td>
+              <td>Chọn instance dòng vi xử lý <code>AWS Graviton</code> (ARM)</td>
+              <td>Tỷ lệ Price-Performance vượt trội so với dòng chip x86 truyền thống.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+<section id="mastery-900">
+      <h2 class="section-title">15. Bí Quyết Ngách Bứt Phá Điểm 900+ (The 900+ Score Edge)</h2>
+
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-name">Các Chủ Đề Ngách & Bẫy Chuyên Gia Để Đạt Điểm Tuyệt Đối</div>
+          <span class="service-tag tag-core">900+ Mastery</span>
+        </div>
+
+        <div class="theory-block">
+          <h4>🎯 6 Chủ đề phân loại thí sinh giỏi (750 điểm) vs Thí sinh xuất sắc (900+ điểm):</h4>
+          <ul>
+            <li><b>1. Hybrid DNS với Route 53 Resolver:</b>
+              <br>• <b>Inbound Endpoint:</b> Cho phép máy chủ On-premise gửi truy vấn DNS vào AWS để phân giải domain riêng trong VPC (Route 53 Private Hosted Zone).
+              <br>• <b>Outbound Endpoint:</b> Cho phép máy ảo EC2 trong VPC gửi truy vấn DNS ngược về Data Center On-premise để phân giải domain nội bộ công ty (`corp.local`).
+            </li>
+            <li><b>2. S3 Bucket Key (Tối ưu 99% chi phí KMS):</b> Khi mã hóa hàng triệu file trên S3 bằng KMS (SSE-KMS), số lượng request gọi KMS rất lớn gây đội chi phí. Bật <b>S3 Bucket Key</b> cho phép S3 tạo data key ở cấp bucket, giảm tới <b>99% chi phí KMS request</b>.</li>
+            <li><b>3. Bảo mật Cross-Account S3 + KMS:</b> Khi Account A cấp quyền cho Account B đọc file mã hóa trong S3, cần 3 điều kiện: (1) S3 Bucket Policy cho phép Account B, (2) IAM Policy của User ở Account B cho phép đọc S3 & giải mã KMS, và (3) <b>KMS Key Policy ở Account A bắt buộc phải cho phép Account B giải mã</b>. Thiếu KMS Key Policy sẽ bị Access Denied ngay lập tức.</li>
+            <li><b>4. Chống lỗi Confused Deputy với IAM <code>sts:ExternalId</code>:</b> Khi bạn thuê 1 công ty SaaS bên thứ 3 quản lý tài khoản AWS của bạn qua IAM Role, hacker có thể lợi dụng SaaS đó để truy cập trái phép. Giải pháp: Bắt buộc cấu hình thêm <code>Condition: { "StringEquals": { "sts:ExternalId": "unique-client-secret" } }</code> trong Trust Policy của Role.</li>
+            <li><b>5. Kết nối Direct Connect đa vùng (DXGW):</b> Dùng <b>Direct Connect Gateway (DXGW)</b> để 1 đường Direct Connect vật lý có thể kết nối tới nhiều VPC ở các Region khác nhau trên toàn cầu.
+              <br>• <i>Private VIF:</i> Nối vào 1 VPC hoặc DXGW.
+              <br>• <i>Transit VIF:</i> Nối vào <b>AWS Transit Gateway</b> (kết nối hàng trăm VPC).
+            </li>
+            <li><b>6. Ma trận 4 chiến lược Disaster Recovery (RPO & RTO):</b>
+              <br>• <i>Backup & Restore:</i> RPO/RTO tính bằng Giờ/Ngày $\rightarrow$ Chi phí rẻ nhất.
+              <br>• <i>Pilot Light:</i> Database đồng bộ liên tục, chỉ bật server EC2 khi có sự cố $\rightarrow$ RPO/RTO tính bằng chục Phút.
+              <br>• <i>Warm Standby:</i> Hệ thống thu nhỏ (min-capacity) chạy sẵn 24/7 ở Region 2, khi sập chỉ cần scale to lên $\rightarrow$ RPO/RTO tính bằng Phút.
+              <br>• <i>Multi-Region Active-Active:</i> Chạy full tải cả 2 Region song song $\rightarrow$ RPO/RTO tính bằng Giây (gần bằng 0), đắt nhất.
+            </li>
+          </ul>
+        </div>
+
+        <table class="options-table">
+          <thead>
+            <tr><th class="col-mastery" style="width: 48px; text-align: center;">Học</th>
+              <th class="col-req">Tình huống câu hỏi 900+</th>
+              <th class="col-opt">Đáp án chuẩn kiến trúc</th>
+              <th class="col-note">Điểm nhận diện & Bẫy</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-item-id="chk_item_91"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_91" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>On-premise cần phân giải domain private `.internal` của AWS VPC</td>
+              <td>Tạo Route 53 Resolver <code>Inbound Endpoint</code></td>
+              <td>Inbound nhận request từ ngoài vào. Outbound đẩy request từ VPC ra ngoài.</td>
+            </tr>
+            <tr data-item-id="chk_item_92"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_92" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Hàng triệu file S3 mã hóa KMS bị đội chi phí API request quá cao</td>
+              <td>Bật <code>S3 Bucket Key</code></td>
+              <td>Giảm 99% chi phí KMS call. Tuyệt đối không tắt mã hóa.</td>
+            </tr>
+            <tr data-item-id="chk_item_93"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_93" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Thuê bên thứ 3 truy cập IAM Role tài khoản của công ty an toàn tuyệt đối</td>
+              <td>Tạo IAM Role kèm <code>ExternalId</code> trong Trust Policy</td>
+              <td>Giải quyết bài toán "Confused Deputy Problem" kinh điển của AWS IAM.</td>
+            </tr>
+            <tr data-item-id="chk_item_94"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_94" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Chia sẻ snapshot cơ sở dữ liệu RDS sang tài khoản AWS khác</td>
+              <td>Tạo <code>Manual Snapshot</code> $\rightarrow$ Bấm <code>Share Snapshot</code></td>
+              <td>Automated snapshot KHÔNG THỂ chia sẻ cross-account trực tiếp.</td>
+            </tr>
+            <tr data-item-id="chk_item_95"><td class="col-mastery" style="text-align: center;"><input type="checkbox" class="mastery-chk" id="chk_item_95" title="Đánh dấu đã thuộc kiến thức này"></td>
+              <td>Yêu cầu RTO dưới 5 phút, RPO gần bằng 0 nhưng chi phí vừa phải</td>
+              <td>Chọn chiến lược <code>Warm Standby</code></td>
+              <td>Pilot Light mất lâu hơn để bật compute; Active-Active chi phí quá đắt gấp đôi.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+<section id="cheat-decisions">
+      <h2 class="section-title">
+        <span>16. Cây Quyết Định Bắt Nhanh Đáp Án</span>
+        <span class="service-tag tag-core" style="background: var(--accent); color: #000;">10s CHEAT SHEET</span>
+      </h2>
+
+      <div class="decision-lead">
+        🎯 <b>Tư duy loại suy phản xạ nhanh:</b> Xác định đúng <b>1 trong 4 mục tiêu tối thượng</b> dưới đây trong đề bài để bắt ngay bộ dịch vụ kiến trúc tương ứng mà không cần đọc dài dòng! Nhấp vào các mã dịch vụ để sao chép nhanh.
+      </div>
+
+      <div class="decision-grid">
+        <!-- 1. Cost -->
+        <div class="decision-card decision-cost">
+          <div class="decision-card-header">
+            <span class="decision-icon">💰</span>
+            <div>
+              <div class="decision-card-title">Chi Phí Rẻ Nhất</div>
+              <div class="decision-card-sub">Most Cost-Effective</div>
+            </div>
+          </div>
+          <div class="decision-card-body">
+            <div class="decision-rule">
+              <span class="decision-badge">EC2 Compute</span>
+              <div>Chọn <code>Spot Instances</code> (cho batch job chịu gián đoạn) hoặc <code>Savings Plans</code> / <code>Reserved Instances</code> (chạy liên tục 24/7).</div>
+            </div>
+            <div class="decision-rule">
+              <span class="decision-badge">Storage</span>
+              <div><code>S3 Intelligent-Tiering</code> (dữ liệu mẫu truy cập không rõ ràng) &rarr; Lifecycle sang <code>Glacier Deep Archive</code> (lưu trữ kiểm toán lâu năm).</div>
+            </div>
+            <div class="decision-rule">
+              <span class="decision-badge">Network</span>
+              <div>Chọn <code>VPC Gateway Endpoint</code> cho S3 & DynamoDB (Miễn phí 100%, không tốn tiền qua NAT Gateway).</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Least Operational Overhead -->
+        <div class="decision-card decision-ops">
+          <div class="decision-card-header">
+            <span class="decision-icon">⚡</span>
+            <div>
+              <div class="decision-card-title">Ít Công Bảo Trì Nhất</div>
+              <div class="decision-card-sub">Least Operational Overhead</div>
+            </div>
+          </div>
+          <div class="decision-card-body">
+            <div class="decision-rule">
+              <span class="decision-badge">Serverless First</span>
+              <div>Ưu tiên tuyệt đối: <code>AWS Lambda</code>, <code>AWS Fargate</code>, <code>Aurora Serverless v2</code>, <code>Amazon EventBridge</code> (AWS lo OS & patching).</div>
+            </div>
+            <div class="decision-rule">
+              <span class="decision-badge">Tự Động Hóa</span>
+              <div><code>S3 Lifecycle Policies</code>, <code>SSM Session Manager</code> (thay thế Bastion host), <code>Secrets Manager Auto-rotation</code>.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. High Availability -->
+        <div class="decision-card decision-ha">
+          <div class="decision-card-header">
+            <span class="decision-icon">🛡️</span>
+            <div>
+              <div class="decision-card-title">Khả Năng Chịu Lỗi Cao Nhất</div>
+              <div class="decision-card-sub">High Availability / Fault Tolerant</div>
+            </div>
+          </div>
+          <div class="decision-card-body">
+            <div class="decision-rule">
+              <span class="decision-badge">Database Tier</span>
+              <div>Bật <code>Multi-AZ</code> (RDS / Aurora) tự động đồng bộ sang Standby ở AZ khác, tự failover trong 60-120 giây.</div>
+            </div>
+            <div class="decision-rule">
+              <span class="decision-badge">Compute Tier</span>
+              <div><code>Auto Scaling Group (ASG)</code> kết hợp <code>ALB</code> trải dài tối thiểu trên 2-3 Availability Zones (AZs).</div>
+            </div>
+            <div class="decision-rule">
+              <span class="decision-badge">Decoupled</span>
+              <div>Kiến trúc tách rời độc lập qua hàng đợi <code>Amazon SQS</code> buffer tải hoặc <code>Amazon SNS Fanout</code>.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Sub-millisecond Latency -->
+        <div class="decision-card decision-speed">
+          <div class="decision-card-header">
+            <span class="decision-icon">🚀</span>
+            <div>
+              <div class="decision-card-title">Tốc Độ Siêu Tốc</div>
+              <div class="decision-card-sub">Sub-millisecond Latency / Caching</div>
+            </div>
+          </div>
+          <div class="decision-card-body">
+            <div class="decision-rule">
+              <span class="decision-badge">Cache Cho Ứng Dụng</span>
+              <div><code>Amazon ElastiCache (Redis)</code> đặt đệm trước RDS để giải tỏa tải đọc database.</div>
+            </div>
+            <div class="decision-rule">
+              <span class="decision-badge">Cache Cho DynamoDB</span>
+              <div><code>DynamoDB Accelerator (DAX)</code> đưa tốc độ đọc từ milliseconds về microseconds (10x faster).</div>
+            </div>
+            <div class="decision-rule">
+              <span class="decision-badge">Toàn Cầu</span>
+              <div><code>Amazon CloudFront</code> (cho web/nội dung tĩnh) hoặc <code>AWS Global Accelerator</code> (cho IP Anycast & non-HTTP).</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Collapsible Original ASCII Diagram -->
+      <details style="margin-top: 16px; background: var(--rule-bg); border: 2px dashed var(--border-color); border-radius: 8px; padding: 12px 16px; cursor: pointer;">
+        <summary style="font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--text);">📐 Xem sơ đồ nhánh cây ASCII nguyên bản</summary>
+        <div style="background: var(--code-bg); border: 1.5px solid var(--border-color); border-radius: 6px; padding: 18px; font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; line-height: 1.8; color: var(--primary); overflow-x: auto; margin-top: 10px;">
+              ┌─── Chi phí rẻ nhất (Most Cost-Effective)?
+              │    ├── EC2: Spot Instances (cho batch job) / Savings Plans (cho chạy 24/7)
+              │    ├── Storage: S3 Intelligent-Tiering / Lifecycle sang Glacier Deep Archive
+              │    └── Network: VPC Gateway Endpoint (thay vì NAT Gateway)
+              │
+              ├─── Ít công bảo trì nhất (Least Operational Overhead)?
+              │    ├── Serverless: Lambda, Fargate, Aurora Serverless v2, EventBridge
+              │    └── Tự động hóa: S3 Lifecycle, Systems Manager Session Manager, Secrets Manager Auto-rotation
+              │
+YÊU CẦU ĐỀ BÀI ─┼─── Khả năng chịu lỗi cao nhất (High Availability / Fault Tolerant)?
+              │    ├── Database: Multi-AZ (RDS/Aurora)
+              │    ├── Compute: Auto Scaling Group trải dài tối thiểu 2-3 AZs
+              │    └── Messaging: Tách rời qua SQS / SNS (Decoupled architecture)
+              │
+              └─── Tốc độ siêu tốc (Sub-millisecond latency / Caching)?
+                   ├── Cho ứng dụng: Amazon ElastiCache (Redis)
+                   ├── Cho DynamoDB: DynamoDB DAX
+                   └── Cho người dùng toàn cầu: Amazon CloudFront / Global Accelerator
+        </div>
+      </details>
+    </section>
+
+  </main>
+
+  <!-- Toast Notification -->
+  <div id="toast"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg> <span id="toastMsg">Đã sao chép vào bộ nhớ tạm!</span></div>
+
+  <!-- Floating Back to Top Button -->
+  <button id="backToTop" aria-label="Lên đầu trang"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+
+  <script>
+    // --- UI/UX Pro Max Script Engine (Neo-Brutalism Edition) ---
+
+    const searchInput = document.getElementById('searchInput');
+    const resultsCount = document.getElementById('resultsCount');
+    const cards = document.querySelectorAll('.service-card');
+    const allRows = document.querySelectorAll('.options-table tbody tr');
+    const flashcardBtn = document.getElementById('toggleFlashcard');
+    const themeBtn = document.getElementById('themeToggle');
+    const mobileThemeBtn = document.getElementById('mobileThemeBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    const themeLabel = document.getElementById('themeLabel');
+    const mobileThemeIcon = document.getElementById('mobileThemeIcon');
+    const trapFilterBtn = document.getElementById('trapFilterBtn');
+    const toast = document.getElementById('toast');
+    const toastMsg = document.getElementById('toastMsg');
+    const backToTop = document.getElementById('backToTop');
+    const menuBtn = document.getElementById('menuBtn');
+    const sidebar = document.getElementById('sidebar');
+    const backdrop = document.getElementById('backdrop');
+    const progressBar = document.getElementById('progressBar');
+    const progressText = document.getElementById('progressText');
+    const filterPills = document.querySelectorAll('.pill');
+
+    let isTrapFilterActive = false;
+
+    // 1. Dual-Theme Engine (Light / Dark)
+    const THEME_KEY = 'aws_saa_theme_v2';
+    let currentTheme = localStorage.getItem(THEME_KEY) || 'dark';
+
+    function applyTheme(theme) {
+      currentTheme = theme;
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem(THEME_KEY, theme);
+
+      if (theme === 'light') {
+        if (themeIcon) themeIcon.innerText = '🌙';
+        if (themeLabel) themeLabel.innerText = 'Dark Mode';
+        if (mobileThemeIcon) mobileThemeIcon.innerText = '🌙';
+      } else {
+        if (themeIcon) themeIcon.innerText = '☀️';
+        if (themeLabel) themeLabel.innerText = 'Light Mode';
+        if (mobileThemeIcon) mobileThemeIcon.innerText = '☀️';
+      }
+    }
+
+    applyTheme(currentTheme);
+
+    // Auto-tag table columns so td elements have col-req, col-opt, col-note
+    document.querySelectorAll('.options-table').forEach(table => {
+      const hasReqTh = !!table.querySelector('th.col-req');
+      if (hasReqTh) {
+        table.querySelectorAll('tbody tr').forEach(row => {
+          const tds = row.querySelectorAll('td');
+          if (tds.length === 4) {
+            tds[1].classList.add('col-req');
+            tds[2].classList.add('col-opt');
+            tds[3].classList.add('col-note');
+          }
+        });
+      }
+    });
+
+    function toggleTheme() {
+      const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      applyTheme(nextTheme);
+      showToast(nextTheme === 'light' ? 'Đã chuyển sang Neo-Pop Light Mode ☀️' : 'Đã chuyển sang Cyber-Dark Mode 🌙');
+    }
+
+    if (themeBtn) themeBtn.addEventListener('click', toggleTheme);
+    if (mobileThemeBtn) mobileThemeBtn.addEventListener('click', toggleTheme);
+
+    // 2. Keyboard Shortcuts: '/' search, 'Esc' clear, 'T' theme, 'F' flashcard
+    window.addEventListener('keydown', (e) => {
+      const isInputActive = document.activeElement === searchInput;
+      if (e.key === '/' && !isInputActive) {
+        e.preventDefault();
+        searchInput.focus();
+      } else if (e.key === 'Escape' && isInputActive) {
+        searchInput.value = '';
+        triggerSearch();
+        searchInput.blur();
+      } else if ((e.key === 't' || e.key === 'T') && !isInputActive) {
+        toggleTheme();
+      } else if ((e.key === 'f' || e.key === 'F') && !isInputActive) {
+        toggleFlashcardMode();
+      }
+    });
+
+    // 3. Search & Trap Filter Engine
+    searchInput.addEventListener('input', () => {
+      if (isTrapFilterActive) {
+        isTrapFilterActive = false;
+        if (trapFilterBtn) trapFilterBtn.classList.remove('active');
+      }
+      triggerSearch();
+    });
+
+    function isTrapRow(row) {
+      const noteCell = row.querySelector('.col-note');
+      const noteText = noteCell ? noteCell.innerText.toLowerCase() : '';
+      const rowText = row.innerText.toLowerCase();
+      const inSpecialSection = !!row.closest('#mastery-900, #focus-2026');
+
+      return (
+        inSpecialSection ||
+        noteText.includes('bẫy') ||
+        noteText.includes('lưu ý') ||
+        noteText.includes('chú ý') ||
+        noteText.includes('không thể') ||
+        noteText.includes('bắt buộc') ||
+        noteText.includes('tránh') ||
+        noteText.includes('nhầm lẫn') ||
+        noteText.includes('mấu chốt') ||
+        noteText.includes('quan trọng') ||
+        noteText.includes('900+') ||
+        rowText.includes('bẫy')
+      );
+    }
+
+    function triggerSearch() {
+      const query = searchInput.value.toLowerCase().trim();
+      let matchCardCount = 0;
+      let matchRowCount = 0;
+
+      cards.forEach(card => {
+        const cardRows = card.querySelectorAll('.options-table tbody tr');
+        let cardHasMatch = false;
+
+        if (isTrapFilterActive) {
+          cardRows.forEach(row => {
+            if (isTrapRow(row)) {
+              row.style.display = '';
+              row.classList.add('trap-highlight');
+              cardHasMatch = true;
+              matchRowCount++;
+            } else {
+              row.style.display = 'none';
+              row.classList.remove('trap-highlight');
+            }
+          });
+          if (card.closest('#mastery-900, #focus-2026') || card.querySelector('.callout-trap')) {
+            cardHasMatch = true;
+          }
+        } else if (query) {
+          const cardText = card.innerText.toLowerCase();
+          if (cardText.includes(query)) {
+            cardHasMatch = true;
+            cardRows.forEach(row => {
+              if (row.innerText.toLowerCase().includes(query)) {
+                row.style.display = '';
+                matchRowCount++;
+              } else {
+                row.style.display = 'none';
+              }
+            });
+            const visibleRows = card.querySelectorAll('.options-table tbody tr:not([style*="display: none"])');
+            if (visibleRows.length === 0 && cardRows.length > 0) {
+              cardRows.forEach(r => { r.style.display = ''; matchRowCount++; });
+            }
+          } else {
+            cardRows.forEach(row => { row.style.display = 'none'; });
+          }
+        } else {
+          cardHasMatch = true;
+          cardRows.forEach(row => {
+            row.style.display = '';
+            row.classList.remove('trap-highlight');
+          });
+        }
+
+        if (cardHasMatch) {
+          card.style.display = '';
+          matchCardCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      if (isTrapFilterActive) {
+        resultsCount.innerText = `⚡ Đang hiển thị ${matchRowCount} tình huống BẪY & 900+ Traps mấu chốt`;
+        resultsCount.classList.add('show');
+      } else if (query) {
+        resultsCount.innerText = `Tìm thấy ${matchCardCount} chuyên mục (${matchRowCount} dòng) phù hợp với "${query}"`;
+        resultsCount.classList.add('show');
+      } else {
+        resultsCount.classList.remove('show');
+      }
+    }
+
+    // 4. Quick Filter Pills
+    filterPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        filterPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        const filter = pill.dataset.filter;
+
+        if (filter === 'traps') {
+          isTrapFilterActive = true;
+          searchInput.value = '';
+          triggerSearch();
+          showToast('⚡ Đã bật bộ lọc: Chỉ hiển thị các tình huống chứa BẪY ĐỀ THI!');
+          return;
+        }
+
+        isTrapFilterActive = false;
+        allRows.forEach(r => r.classList.remove('trap-highlight'));
+
+        if (filter === 'all') {
+          searchInput.value = '';
+        } else if (filter === 'storage') {
+          searchInput.value = 'storage';
+        } else if (filter === 'compute') {
+          searchInput.value = 'compute';
+        } else if (filter === 'network') {
+          searchInput.value = 'vpc';
+        } else if (filter === 'database') {
+          searchInput.value = 'database';
+        } else if (filter === 'security') {
+          searchInput.value = 'security';
+        } else if (filter === 'analytics') {
+          searchInput.value = 'kinesis';
+        } else if (filter === '2026') {
+          searchInput.value = '2026';
+        } else if (filter === '900') {
+          searchInput.value = '900';
+        }
+        triggerSearch();
+      });
+    });
+
+    // 5. Flashcard Mode (Hide/Show Answers)
+    function toggleFlashcardMode() {
+      document.body.classList.toggle('flashcard-mode');
+      const active = document.body.classList.contains('flashcard-mode');
+      flashcardBtn.classList.toggle('active', active);
+      flashcardBtn.querySelector('span').innerText = active ? 'Hiện Đáp Án' : 'Che Đáp Án';
+      showToast(active ? 'Chế độ Flashcard BẬT: Bấm vào ô che mờ để lật đáp án!' : 'Đã tắt chế độ Flashcard.');
+    }
+
+    flashcardBtn.addEventListener('click', toggleFlashcardMode);
+
+    document.addEventListener('click', (e) => {
+      if (document.body.classList.contains('flashcard-mode')) {
+        const optCell = e.target.closest('.col-opt');
+        if (optCell) {
+          optCell.classList.toggle('revealed');
+        }
+      }
+    });
+
+    // 6. Click-to-Copy on Code Badges
+    document.addEventListener('click', (e) => {
+      const codeTag = e.target.closest('code');
+      if (codeTag) {
+        const textToCopy = codeTag.innerText.trim();
+        navigator.clipboard.writeText(textToCopy).then(() => {
+          showToast(`Đã sao chép: "${textToCopy}"`);
+        });
+      }
+    });
+
+    function showToast(msg) {
+      toastMsg.innerText = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+
+    // 7. Mastery Progress Tracker (localStorage)
+    const checkBoxes = document.querySelectorAll('.mastery-chk');
+    const STORAGE_KEY = 'aws_saa_mastery_v1';
+    let masteredItems = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+
+    function updateProgress() {
+      const total = checkBoxes.length;
+      let count = 0;
+      checkBoxes.forEach(chk => {
+        const row = chk.closest('tr');
+        if (masteredItems[chk.id]) {
+          chk.checked = true;
+          if (row) row.classList.add('mastered');
+          count++;
+        } else {
+          chk.checked = false;
+          if (row) row.classList.remove('mastered');
+        }
+      });
+
+      const pct = total > 0 ? Math.round((count / total) * 100) : 0;
+      if (progressBar) progressBar.style.width = pct + '%';
+      if (progressText) progressText.innerText = `${pct}% (${count}/${total})`;
+    }
+
+    checkBoxes.forEach(chk => {
+      chk.addEventListener('change', (e) => {
+        if (e.target.checked) {
+          masteredItems[e.target.id] = true;
+        } else {
+          delete masteredItems[e.target.id];
+        }
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(masteredItems));
+        updateProgress();
+      });
+    });
+
+    updateProgress();
+
+    // 8. Scroll to Top
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // 9. Mobile Navigation Drawer
+    if (menuBtn) {
+      menuBtn.addEventListener('click', () => {
+        sidebar.classList.add('open');
+        backdrop.classList.add('open');
+      });
+      backdrop.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        backdrop.classList.remove('open');
+      });
+      document.querySelectorAll('#sidebar .nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          sidebar.classList.remove('open');
+          backdrop.classList.remove('open');
+        });
+      });
+    }
+  </script>
+</body>
+</html>
